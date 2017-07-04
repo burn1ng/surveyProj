@@ -1,0 +1,46 @@
+{
+  "name": "surveyproj",
+  "version": "1.0.0",
+  "description": "my first real project in iTechArt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burn1ng/surveyProj.git"
+  },
+  "keywords": [
+    "html5",
+    "css3",
+    "SCSS",
+    "js(ES5)",
+    "jQuery",
+    "Bootstrap",
+    "React.js",
+    "gulp.js"
+  ],
+  "author": "Andrei Dushkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/burn1ng/surveyProj/issues"
+  },
+  "homepage": "https://github.com/burn1ng/surveyProj#readme",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11",
+    "gulp.spritesmith": "^6.5.0",
+    "imagemin-pngquant": "^5.0.1",
+    "merge": "^1.2.0",
+    "rimraf": "^2.6.1",
+    "run-sequence": "^2.0.0"
+  }
+}

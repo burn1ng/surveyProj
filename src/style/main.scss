@@ -1,0 +1,14 @@
+/*
+* Third Party
+*/
+
+//@import "../../bower_components/normalize-css/normalize"; //don't need .css 
+//@import "../../bower_components/bootstrap/dist/css/bootstrap.min"; //don't need .css 
+
+/*
+* Custom .scss
+*/
+
+@import "partials/_sprite";
+@import "partials/app";
+@import "partials/header";

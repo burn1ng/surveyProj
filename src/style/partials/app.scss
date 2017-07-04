@@ -1,0 +1,122 @@
+/* FONTS variables */
+
+$medium: 'RobotoMedium', sans-serif;
+$light: 'RobotoLight', sans-serif;
+$thin: 'RobotoThin', sans-serif;
+
+/* COLORS variables */
+
+$textColor: #283136;
+$backgroundDark: #000;
+
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url('../fonts/RobotoMedium.eot');
+    src: url('../fonts/RobotoMedium.eot') format('embedded-opentype'), url('../fonts/RobotoMedium.woff2') format('woff2'), url('../fonts/RobotoMedium.woff') format('woff'), url('../fonts/RobotoMedium.ttf') format('truetype'), url('../fonts/RobotoMedium.svg#RobotoMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../fonts/RobotoLight.eot');
+    src: url('../fonts/RobotoLight.eot') format('embedded-opentype'), url('../fonts/RobotoLight.woff2') format('woff2'), url('../fonts/RobotoLight.woff') format('woff'), url('../fonts/RobotoLight.ttf') format('truetype'), url('../fonts/RobotoLight.svg#RobotoLight') format('svg');
+}
+
+@font-face {
+    font-family: 'RobotoThin';
+    src: url('../fonts/RobotoThin.eot');
+    src: url('../fonts/RobotoThin.eot') format('embedded-opentype'), url('../fonts/RobotoThin.woff2') format('woff2'), url('../fonts/RobotoThin.woff') format('woff'), url('../fonts/RobotoThin.ttf') format('truetype'), url('../fonts/RobotoThin.svg#RobotoThin') format('svg');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font: normal 15px/1.5 $light, sans-serif;
+    color: $textColor;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.no-select {
+    -webkit-user-select: none; /* Chrome, Opera, Safari */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+
+input:focus, a:focus, textarea:focus, select:focus {
+    outline: none!important;
+}
+
+label {
+    cursor: pointer;
+}
+
+@mixin placeholder() {
+    font: 12px/18px $medium;
+    text-transform: uppercase;
+}
+
+::-webkit-input-placeholder {
+    @include placeholder();
+}
+
+::-moz-placeholder {
+    @include placeholder();
+}
+
+
+/* Firefox 19+ */
+
+:-moz-placeholder {
+    @include placeholder();
+}
+
+
+/* Firefox 18- */
+
+:-ms-input-placeholder {
+    @include placeholder();
+}
+
+:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+:focus::-moz-placeholder {
+    color: transparent
+}
+
+:focus:-moz-placeholder {
+    color: transparent
+}
+
+:focus:-ms-input-placeholder {
+    color: transparent
+}
+
+
+
+// Usage of icon's mixins: 
+
+// .icon {
+//  display:inline-block;
+//  margin: 50px;
+//  cursor:pointer;
+//  opacity: .5;
+//  &:hover {
+//    opacity: 1;
+//  }
+// }
+// .icon-vk {
+//  @include sprite($icon-vk);  
+// }
+// .icon-fb {
+//  @include sprite($icon-fb);  
+// }
+// .icon-insta {
+//  @include sprite($icon-insta); 
+// }
+

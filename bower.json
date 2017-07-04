@@ -1,0 +1,27 @@
+{
+  "name": "surveyproj",
+  "description": "my first real project in iTechArt",
+  "main": "index.js",
+  "authors": [
+    "Andrei Dushkov"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "html5",
+    "css3",
+    "SCSS",
+    "js(ES5)",
+    "jQuery",
+    "Bootstrap",
+    "React.js",
+    "gulp.js"
+  ],
+  "homepage": "https://github.com/burn1ng/surveyProj",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

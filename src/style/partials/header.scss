@@ -1,0 +1,8 @@
+.header-container {
+	display: flex;
+    background: $backgroundDark;
+    justify-content: space-around;
+    &__item {
+		color: #fff;
+    }
+}
