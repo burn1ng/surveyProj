@@ -7,7 +7,6 @@ $thin: 'RobotoThin', sans-serif;
 /* COLORS variables */
 
 $textColor: #283136;
-$backgroundDark: #000;
 
 @font-face {
     font-family: 'RobotoMedium';
@@ -44,6 +43,10 @@ body {
     -moz-user-select: none; /* Firefox 2+ */
     -ms-user-select: none; /* IE 10+ */
     user-select: none; /* Standard syntax */
+}
+
+.no-padding {
+    padding: 0;
 }
 
 input:focus, a:focus, textarea:focus, select:focus {

@@ -50,8 +50,11 @@ var path = {
 
 var browserSyncOptions = {
     server: {
-        baseDir: "./build"
-    },
+        baseDir: "./build",
+        routes: {
+            "/bower_components": "./bower_components"
+        }
+    },    
     tunnel: false,
     host: 'localhost',
     port: 3002,
@@ -60,10 +63,21 @@ var browserSyncOptions = {
     logPrefix: "Browser-sync"
 };
 var autoPrefixerOptions = {
+    browsers: [ 
+        "Android 2.3", // To match upstream Bootstrap's level of browser compatibility
+        "Android >= 4",
+        "Chrome >= 20",
+        "Firefox >= 24",
+        "Explorer >= 8",
+        "iOS >= 6",
+        "Opera >= 12",
+        "Safari >= 6"
+    ],
     cascade: false
 };
 var sassOptions = {
-    errLogToConsole: true
+    errLogToConsole: true,
+    precision: 10 //TODO test this parameter!
 };
 var spriteOptions = {
     imgName: 'sprite.png',
@@ -101,7 +115,7 @@ gulp.task('js:build', function() {
 });
 gulp.task('style:build', function() {
     gulp.src(path.src.style) // get only main.scss (all scss files included from partials there)
-        .pipe(sass.sync().on('error', sass.logError)) //compile SCSS/SASS to css, log the errors without falling down
+        .pipe(sass.sync(sassOptions).on('error', sass.logError)) //compile SCSS/SASS to css, log the errors without falling down
         .pipe(prefixer(autoPrefixerOptions)) //add vendor-prefixes
         //.pipe(cssnano()) // minify
         .pipe(gulp.dest(path.build.css))

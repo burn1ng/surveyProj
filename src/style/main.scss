@@ -3,7 +3,23 @@
 */
 
 //@import "../../bower_components/normalize-css/normalize"; //don't need .css 
-//@import "../../bower_components/bootstrap/dist/css/bootstrap.min"; //don't need .css 
+
+/*
+ * Redefined Bootstrap's variables MUST BE BEFORE @import "bootstrap_custom". Below you can seee example of usage.
+*/
+$icon-font-path: "/bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+$brand-primary: #eb1c23;
+
+$link-color: $brand-primary;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+$navbar-default-toggle-hover-bg: $brand-primary; //** it was #ddd;
+$navbar-default-toggle-hover-icon-bar-bg: #fff; //** new variable
+
+@import "_bootstrap_custom"; // all styles of bootstrap here 
+
 
 /*
 * Custom .scss
