@@ -22,6 +22,7 @@ var path = {
         css: 'build/css/',
         img: 'build/img/',
         icons: 'build/img/',
+        favicon: 'build/', // favicon must be in the root
         fonts: 'build/fonts/'
     },
     src: { // source folders of all files
@@ -29,7 +30,8 @@ var path = {
         js: 'src/js/main.js', // I use only 1 file to control sequence of all scripts in main.js
         style: 'src/style/main.scss', // I use only 1 file to control sequence of all styles in main.scss
         img: 'src/img/**/*.*',
-        icons: 'src/icons/**.*',
+        icons: 'src/icons/*.*',
+        favicon: 'src/favicon/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     watch: { // where are we should watch for changings
@@ -38,6 +40,7 @@ var path = {
         style: 'src/style/**/*.*', //watch for added css or sass files both
         img: 'src/img/**/*.*',
         icons: 'src/icons/**/*.*',
+        favicon: 'src/favicon/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     clean: './build'
@@ -110,6 +113,10 @@ gulp.task('image:build', function() {
         .pipe(gulp.dest(path.build.img))
         .pipe(reload({ stream: true }));
 });
+gulp.task('favicon:build', function() {
+    gulp.src(path.src.favicon)
+        .pipe(gulp.dest(path.build.favicon)) // simple copy all favicons and manifest.json
+});
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts)) // simple copy
@@ -131,7 +138,7 @@ gulp.task('clean', function(cb) {
 gulp.task('build', function(cb) {
     runSequence('clean', //clean build folder !!!first, then
         'sprite:generate', //generate sprite-image and sass-code for icons !!!second
-    ['image:build', 'html:build', 'js:build', 'style:build', 'fonts:build'], //simultaneously
+    ['image:build', 'html:build', 'js:build', 'style:build', 'fonts:build', 'favicon:build'], //simultaneously
         cb);
 });
 
@@ -155,6 +162,9 @@ gulp.task('watch', function() {
     });
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
+    });
+    watch([path.watch.favicon], function(event, cb) {
+        gulp.start('favicon:build');
     });
 });
 
