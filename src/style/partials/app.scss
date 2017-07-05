@@ -1,13 +1,3 @@
-/* FONTS variables */
-
-$medium: 'RobotoMedium', sans-serif;
-$light: 'RobotoLight', sans-serif;
-$thin: 'RobotoThin', sans-serif;
-
-/* COLORS variables */
-
-$textColor: #283136;
-
 @font-face {
     font-family: 'RobotoMedium';
     src: url('../fonts/RobotoMedium.eot');
@@ -32,7 +22,6 @@ $textColor: #283136;
 
 body {
     font: normal 15px/1.5 $light, sans-serif;
-    color: $textColor;
     padding: 0;
     margin: 0;
     -webkit-font-smoothing: antialiased;
