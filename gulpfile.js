@@ -15,6 +15,12 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'), // correct finish of the previous task - to start next
     reload = browserSync.reload;
 
+var $svgPlugins = {
+    gutil: require('gulp-util'),
+    svgSprite: require('gulp-svg-sprite'),
+    size: require('gulp-size'),
+}
+
 var path = {
     build: { // destination folders of all files
         html: 'build/',
@@ -23,6 +29,7 @@ var path = {
         img: 'build/img/',
         icons: 'build/img/',
         favicon: 'build/', // favicon must be in the root
+        svg: 'build/svg/',
         fonts: 'build/fonts/'
     },
     src: { // source folders of all files
@@ -32,6 +39,7 @@ var path = {
         img: 'src/img/**/*.*',
         icons: 'src/icons/*.*',
         favicon: 'src/favicon/*.*',
+        svg: 'src/svg/',
         fonts: 'src/fonts/**/*.*'
     },
     watch: { // where are we should watch for changings
@@ -41,9 +49,25 @@ var path = {
         img: 'src/img/**/*.*',
         icons: 'src/icons/**/*.*',
         favicon: 'src/favicon/*.*',
+        svg: 'src/svg/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     clean: './build'
+};
+
+var pathSvg = {
+    images: {
+        src: path.src.svg,
+        dest: path.build.svg + 'img/'
+    },
+    sprite: {
+        src: path.build.svg + 'sprite/*',
+        svg: 'img/sprite.svg',
+        css: 'src/style/partials/_svgSprite.scss'
+    },
+    templates: {
+        src: 'src/style/svg_tpl/'
+    }
 };
 
 // ============ OPTIONS  ============
@@ -54,7 +78,7 @@ var browserSyncOptions = {
         routes: {
             "/bower_components": "./bower_components"
         }
-    },    
+    },
     tunnel: false,
     host: 'localhost',
     port: 3002,
@@ -63,7 +87,7 @@ var browserSyncOptions = {
     logPrefix: "Browser-sync"
 };
 var autoPrefixerOptions = {
-    browsers: [ 
+    browsers: [
         "Android 2.3", // To match upstream Bootstrap's level of browser compatibility
         "Android >= 4",
         "Chrome >= 20",
@@ -145,14 +169,43 @@ gulp.task('sprite:generate', function() {
     return merge(imgStream, cssStream); // Return a merged stream to handle both `end` events 
 });
 
+gulp.task('svgSprite', function() {
+    return gulp.src(pathSvg.sprite.src)
+        .pipe($svgPlugins.svgSprite({
+            shape: {
+                spacing: {
+                    padding: 5
+                }
+            },
+            mode: {
+                css: {
+                    dest: "./",
+                    layout: "diagonal",
+                    sprite: pathSvg.sprite.svg,
+                    bust: false,
+                    render: {
+                        scss: {
+                            dest: "src/style/svg_sprite/_sprite.scss",
+                            template: "src/style/svg_tpl/sprite-template.scss"
+                        }
+                    }
+                }
+            },
+            variables: {
+                mapname: "icons"
+            }
+        }))
+        .pipe(gulp.dest(path.build.svg));
+});
+
 gulp.task('clean', function(cb) {
     rimraf(path.clean, cb);
 });
 
 gulp.task('build', function(cb) {
     runSequence('clean', //clean build folder !!!first, then
-        'sprite:generate', //generate sprite-image and sass-code for icons !!!second
-    ['image:build', 'html:build', 'js:build', 'style:build', 'fonts:build', 'favicon:build'], //simultaneously
+        'sprite:generate', //generate sprite-image and sass-code for icons !!!second then        
+        ['image:build', 'html:build', 'js:build', 'style:build', 'fonts:build', 'favicon:build'], //simultaneously
         cb);
 });
 
