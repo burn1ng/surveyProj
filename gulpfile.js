@@ -8,18 +8,21 @@ var gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
-    rimraf = require('rimraf'),
+    del = require('del'),
     browserSync = require("browser-sync"),
     merge = require('merge-stream'),
     spritesmith = require('gulp.spritesmith'),
     runSequence = require('run-sequence'), // correct finish of the previous task - to start next
     reload = browserSync.reload;
 
-var $svgPlugins = {
+var $ = {
     gutil: require('gulp-util'),
     svgSprite: require('gulp-svg-sprite'),
     size: require('gulp-size'),
+    svgmin: require('gulp-svgmin')
 }
+
+// ============ PATHS  ============
 
 var path = {
     build: { // destination folders of all files
@@ -39,7 +42,7 @@ var path = {
         img: 'src/img/**/*.*',
         icons: 'src/icons/*.*',
         favicon: 'src/favicon/*.*',
-        svg: 'src/svg/',
+        svg: 'src/svg/*.svg',
         fonts: 'src/fonts/**/*.*'
     },
     watch: { // where are we should watch for changings
@@ -49,26 +52,31 @@ var path = {
         img: 'src/img/**/*.*',
         icons: 'src/icons/**/*.*',
         favicon: 'src/favicon/*.*',
-        svg: 'src/svg/**/*.*',
+        svg: 'src/svg/*.svg',
+        svg_tpl: 'src/style/partials/svg-tpl/*.*',
         fonts: 'src/fonts/**/*.*'
     },
-    clean: './build'
-};
-
-var pathSvg = {
-    images: {
-        src: path.src.svg,
-        dest: path.build.svg + 'img/'
-    },
-    sprite: {
-        src: path.build.svg + 'sprite/*',
-        svg: 'img/sprite.svg',
-        css: 'src/style/partials/_svgSprite.scss'
-    },
-    templates: {
-        src: 'src/style/svg_tpl/'
+    clean: {
+        build: './build',
+        svg: './src/style/partials/svg-out'
     }
 };
+
+//TODO test pathes to understand where go all components
+// var pathSvg = {
+//     images: {
+//         src: 'src/svg/',
+//         dest: 'build/svg/img/'
+//     },
+//     sprite: {
+//         src: 'src/style/svg_sprite/*',
+//         svg: 'img/svg-sprite.svg',
+//         css: 'src/style/svg_sprite/_svg-sprite.scss'
+//     },
+//     templates: {
+//         src: 'src/style/svg_tpl/'
+//     }
+// };
 
 // ============ OPTIONS  ============
 
@@ -125,20 +133,20 @@ gulp.task('webserver', function() {
 // ============ TASKS  ============
 
 gulp.task('html:build', function() {
-    gulp.src(path.src.html)
+    return gulp.src(path.src.html)
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({ stream: true }));
 });
 gulp.task('js:build', function() {
-    gulp.src(path.src.js) //get only main.js
+    return gulp.src(path.src.js) //get only main.js
         .pipe(rigger())
         //.pipe(minify()) // minify with "gulp-minify": "^1.0.0"
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({ stream: true }));
 });
 gulp.task('style:build', function() {
-    gulp.src(path.src.style) // get only main.scss (all scss files included from partials there)
+    return gulp.src(path.src.style) // get only main.scss (all scss files included from partials there)
         .pipe(sass.sync(sassOptions).on('error', sass.logError)) //compile SCSS/SASS to css, log the errors without falling down
         .pipe(prefixer(autoPrefixerOptions)) //add vendor-prefixes
         //.pipe(cssnano()) // minify
@@ -146,17 +154,17 @@ gulp.task('style:build', function() {
         .pipe(reload({ stream: true }));
 });
 gulp.task('image:build', function() {
-    gulp.src(path.src.img)
+    return gulp.src(path.src.img)
         .pipe(imagemin(imageMinOptions)) //optimise images
         .pipe(gulp.dest(path.build.img))
         .pipe(reload({ stream: true }));
 });
 gulp.task('favicon:build', function() {
-    gulp.src(path.src.favicon)
+    return gulp.src(path.src.favicon)
         .pipe(gulp.dest(path.build.favicon)) // simple copy all favicons and manifest.json
 });
 gulp.task('fonts:build', function() {
-    gulp.src(path.src.fonts)
+    return gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts)) // simple copy
 });
 gulp.task('sprite:generate', function() {
@@ -169,24 +177,30 @@ gulp.task('sprite:generate', function() {
     return merge(imgStream, cssStream); // Return a merged stream to handle both `end` events 
 });
 
-gulp.task('svgSprite', function() {
-    return gulp.src(pathSvg.sprite.src)
-        .pipe($svgPlugins.svgSprite({
+gulp.task('sprite-svg:generate', function() {
+    return gulp.src('src/svg/*.svg')
+        .pipe($.svgmin()) // minify here
+        .pipe($.svgSprite({
             shape: {
                 spacing: {
                     padding: 5
                 }
+                //transform: ['svgo']
             },
             mode: {
                 css: {
-                    dest: "./",
+                    dest: "./", //Base directory for sprite and CSS file output. e.g. AFTER gulp.dest('...')
                     layout: "diagonal",
-                    sprite: pathSvg.sprite.svg,
-                    bust: false,
+                    sprite: '/build/img/svg-sprite.svg',
+                    /* SVG sprite path and file name, relative to the mode.<mode>.dest directory (see above).                     
+                    ////////////////
+                    I tried to hardcode absolute path from the root to svg-sprite.svg and it WORKS !!!!! =)))
+                    */
+                    bust: false, //Add a content based hash to the name of the sprite file so that clients reliably reload the sprite when it's content changes («cache busting»). Defaults to false except for «css» and «view» sprites.
                     render: {
                         scss: {
-                            dest: "src/style/svg_sprite/_sprite.scss",
-                            template: "src/style/svg_tpl/sprite-template.scss"
+                            dest: "_svg-sprite.scss",
+                            template: "src/style/partials/svg_tpl/svg-sprite-template.scss" //must be absolute
                         }
                     }
                 }
@@ -195,16 +209,16 @@ gulp.task('svgSprite', function() {
                 mapname: "icons"
             }
         }))
-        .pipe(gulp.dest(path.build.svg));
+        .pipe(gulp.dest('src/style/partials/svg-out/')); // no need to reload - after generating will be style building with reloading
 });
 
-gulp.task('clean', function(cb) {
-    rimraf(path.clean, cb);
+gulp.task('clean', function() {
+    return del([path.clean.build, path.clean.svg]); //source can be string or array
 });
 
 gulp.task('build', function(cb) {
-    runSequence('clean', //clean build folder !!!first, then
-        'sprite:generate', //generate sprite-image and sass-code for icons !!!second then        
+    runSequence('clean', //clean build folder and svg-out !!!first, then
+        ['sprite:generate', 'sprite-svg:generate'], //generate sprite-image and sass-code for icons !!!second then        
         ['image:build', 'html:build', 'js:build', 'style:build', 'fonts:build', 'favicon:build'], //simultaneously
         cb);
 });
@@ -212,25 +226,30 @@ gulp.task('build', function(cb) {
 // ============ WATCHING  ============
 
 gulp.task('watch', function() {
-    watch([path.watch.html], function(event, cb) {
+    watch([path.watch.html], function() {
         gulp.start('html:build');
     });
-    watch([path.watch.style], function(event, cb) {
+    watch([path.watch.style], function() {
         gulp.start('style:build');
     });
-    watch([path.watch.js], function(event, cb) {
+    watch([path.watch.js], function() {
         gulp.start('js:build');
     });
-    watch([path.watch.img], function(event, cb) {
+    watch([path.watch.img], function() {
         gulp.start('image:build');
     });
-    watch([path.watch.icons], function(event, cb) {
+    watch([path.watch.icons], function() {
         gulp.start('sprite:generate');
     });
-    watch([path.watch.fonts], function(event, cb) {
+    watch([path.watch.svg, path.watch.svg_tpl], function() {
+        runSequence('sprite-svg:generate', //1st
+            'style:build' //2nd
+        )
+    });
+    watch([path.watch.fonts], function() {
         gulp.start('fonts:build');
     });
-    watch([path.watch.favicon], function(event, cb) {
+    watch([path.watch.favicon], function() {
         gulp.start('favicon:build');
     });
 });

@@ -1,3 +1,11 @@
+/*
+ * Fonts variables
+*/ 
+
+$medium: 'RobotoMedium', sans-serif;
+$light: 'RobotoLight', sans-serif;
+$thin: 'RobotoThin', sans-serif;
+
 @font-face {
     font-family: 'RobotoMedium';
     src: url('../fonts/RobotoMedium.eot');
@@ -21,7 +29,7 @@
 }
 
 body {
-    font: normal 15px/1.5 $light, sans-serif;
+    font: normal $baseFontSize $light, sans-serif;
     padding: 0;
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -112,3 +120,28 @@ label {
 //  @include sprite($icon-insta); 
 // }
 
+
+
+// good box shadows ob bottom of widget element
+
+// .shd:hover:after, .shd:hover:before {
+//     box-shadow: 0 15px 10px rgba(0,0,0,.7);
+// }
+// below.css:1
+// .shd:after {
+//     right: 7px;
+//     z-index: -3;
+//     -ms-transform: rotate(2deg);
+//     transform: rotate(2deg);
+// }
+// below.css:1
+// .shd:after, .shd:before {
+//     content: "";
+//     position: absolute;
+//     bottom: 15px;
+//     width: 50%;
+//     height: 20%;
+//     max-height: "100px";
+//     box-shadow: 0 15px 10px #fff;
+//     transition: box-shadow .2s;
+// }

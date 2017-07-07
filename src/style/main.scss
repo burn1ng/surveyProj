@@ -3,6 +3,7 @@
 */
 
 //@import "../../bower_components/normalize-css/normalize"; //don't need .css 
+@import "../../bower_components/sass-mq/_mq";
 
 /*
  * Redefined Bootstrap's variables MUST BE BEFORE @import "bootstrap_custom". Below you can seee example of usage.
@@ -22,20 +23,22 @@ $navbar-default-toggle-hover-icon-bar-bg: #fff; //** new variable
 
 
 /*
- * Fonts variables
-*/ 
-/* FONTS variables */
+* png sprite, svg sprite
+*/
+@import "partials/_sprite"; //png sprite scss
 
-$medium: 'RobotoMedium', sans-serif;
-$light: 'RobotoLight', sans-serif;
-$thin: 'RobotoThin', sans-serif;
+@import "partials/svg-out/_svg-sprite"; //svg sprite scss
+$svg-sprite: map-get($svg-icons, svg-sprite) !default; // sets up the variable for the main sprite data (file path, dimensions etc.) 
+// this variable MUST BE UNDER IMPORT!!!!
+
+
+@import 'partials/svg_tpl/mixins'; // we need mixins to generate magic code! :)
 
 
 /*
 * Custom .scss
 */
 
-@import "partials/_sprite";
 @import "partials/app";
 @import "partials/header";
 @import "partials/login";

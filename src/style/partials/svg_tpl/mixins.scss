@@ -1,0 +1,60 @@
+$baseFontSize: 12px !default; //  is used for the mq-px2em calculation BASED SIZE OF BODY!
+
+// ================ FUNCTIONS ==================
+@function svg-sprite-attr($icon, $attr) {
+    $newIcon: map-get($svg-icons, $icon);
+    @if $newIcon == null {
+        @warn "Can't find an icon with the name #{$icon}";
+    }
+    @return map-get($newIcon, $attr);
+}
+
+@function svg-icon-attr($icon) {
+    $attr: (
+        width: svg-sprite-attr($icon, width),
+        height: svg-sprite-attr($icon, height),
+        x: svg-sprite-attr($icon, backgroundX),
+        y: svg-sprite-attr($icon, backgroundY)
+    );
+
+    @return $attr;
+}
+
+// ================ PLACEHOLDERS ==================
+
+// Sets background image
+%svg-sprite {
+    display: inline-block;
+    background-image: url(map-get($svg-sprite, svgPath));
+    background-size: mq-px2em( map-get($svg-sprite, width), $baseFontSize) mq-px2em(map-get($svg-sprite, height), $baseFontSize);
+}
+
+// ================ MIXINS ==================
+
+// For use with the gulp sprite plugin
+
+/*
+* This sprite mixin takes in 2 parameters - 
+the first is the name of the icon you want, 
+while the second is optional and allows the user 
+to specify size or bg to get the specific attributes.
+*/
+@mixin svg-sprite($icon, $type: all) {
+    @if $type == all {
+        // Shares the backgrounds
+        @extend %svg-sprite;
+    }
+
+    $iconMap: svg-icon-attr($icon);
+
+    // Outputs dimensions in em
+    @if $type == all or $type == size {
+        width: mq-px2em( map-get($iconMap, width) + 1 , $baseFontSize );
+        height: mq-px2em( map-get($iconMap, height) + 1 , $baseFontSize );
+    }
+
+    // Outputs background position in em
+    @if $type == all or $type == bg {
+        background-position: mq-px2em( map-get($iconMap, x), $baseFontSize ) mq-px2em( map-get($iconMap, y) , $baseFontSize);
+    }
+}
