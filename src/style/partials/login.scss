@@ -44,26 +44,11 @@
 }
 
 .login-title {
-    font-size: $baseFontSize*2;
+    font-size: 2em;
 }
 
-.profile-img {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 10px;
-    display: block;
-    border-radius: 50%;
-}
-
-.profile-image {
-    /*here will be svg icon from sprite*/
-    text-align: center;
-    &::before {
-        @include svg-sprite(key);
-        content: '';
-        fill: azure;
-        stroke: lightsteelblue;
-    }
+.login-logo {
+    @include svg-sprite(login, 120, center);
 }
 
 .need-help {

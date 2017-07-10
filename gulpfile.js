@@ -183,9 +183,14 @@ gulp.task('sprite-svg:generate', function() {
         .pipe($.svgSprite({
             shape: {
                 spacing: {
-                    padding: 5
+                    padding: 1 // magic here, do not touch it
+                },
+                transform: ['svgo'],
+                dimension: {
+                    maxWidth: 16,
+                    maxHeight: 16,
+                    precision: 5
                 }
-                //transform: ['svgo']
             },
             mode: {
                 css: {

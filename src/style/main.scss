@@ -31,7 +31,6 @@ $navbar-default-toggle-hover-icon-bar-bg: #fff; //** new variable
 $svg-sprite: map-get($svg-icons, svg-sprite) !default; // sets up the variable for the main sprite data (file path, dimensions etc.) 
 // this variable MUST BE UNDER IMPORT!!!!
 
-
 @import 'partials/svg_tpl/mixins'; // we need mixins to generate magic code! :)
 
 
@@ -42,4 +41,5 @@ $svg-sprite: map-get($svg-icons, svg-sprite) !default; // sets up the variable f
 @import "partials/app";
 @import "partials/header";
 @import "partials/login";
+@import "partials/register";
 @import "partials/copyright";
