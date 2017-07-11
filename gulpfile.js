@@ -182,14 +182,6 @@ gulp.task('sprite-svg:generate', function() {
         .pipe($.svgmin()) // minify here
         .pipe($.svgSprite({
             shape: {
-                spacing: {
-                    padding: 1 // magic here, do not touch it
-                },
-                // dimension: {
-                //     maxWidth: 16,
-                //     maxHeight: 16,
-                //     precision: 5
-                // },
                 transform: ['svgo']
             },
             mode: {
@@ -203,30 +195,6 @@ gulp.task('sprite-svg:generate', function() {
                     sprite: '/build/img/svg-sprite.svg',
                     example: true
                 }
-            },
-            // mode: {
-            //     css: {
-            //         dest: "./", //Base directory for sprite and CSS file output. e.g. AFTER gulp.dest('...')
-            //         layout: "diagonal",
-            //         sprite: '/build/img/svg-sprite.svg',
-            //         /* SVG sprite path and file name, relative to the mode.<mode>.dest directory (see above).                     
-            //         ////////////////
-            //         I tried to hardcode absolute path from the root to svg-sprite.svg and it WORKS !!!!! =)))
-            //         */
-            //         bust: false, 
-            //         /*Add a content based hash  to the name of the sprite file 
-            //         so that clients reliably reload the sprite when it's content changes 
-            //          («cache busting»). Defaults to false except for «css» and «view» sprites.*/
-            //         render: {
-            //             scss: {
-            //                 dest: "_svg-sprite.scss",
-            //                 template: "src/style/partials/svg_tpl/svg-sprite-template.scss" //must be absolute
-            //             }
-            //         }
-            //     }
-            // },
-            variables: {
-                mapname: "icons"
             }
         }))
         .pipe(gulp.dest('src/style/partials/svg-out/')); // no need to reload - after generating will be style building with reloading

@@ -1,98 +1,42 @@
-$baseFontSize: 16px !default; //  is used for the mq-px2em calculation BASED SIZE OF BODY!
+// usage in app.scss: prefixes for all browsers on focusing at input
+@mixin placeholder() {
+    font: 12px/18px $medium;
+    text-transform: uppercase;
+}
 
-// ================ FUNCTIONS ==================
-@function svg-sprite-attr($icon, $attr) {
-    $newIcon: map-get($svg-icons, $icon);
-    @if $newIcon == null {
-        @warn "Can't find an icon with the name #{$icon}";
+// mixins for svg-sprite-icons
+
+%svg-sprite-dims {
+    width: 1em;
+    height: 1em;
+}
+
+@mixin svg-size-align($size: 1, $align: left) {
+    @if $size==1 {
+        // Shares the dimensions
+        @extend %svg-sprite-dims;
     }
-    @return map-get($newIcon, $attr);
-}
-
-@function svg-icon-attr($icon) {
-    $attr: (
-        width: svg-sprite-attr($icon, width),
-        height: svg-sprite-attr($icon, height),
-        x: svg-sprite-attr($icon, backgroundX),
-        y: svg-sprite-attr($icon, backgroundY)
-    );
-
-    @return $attr;
-}
-
-// ================ PLACEHOLDERS ==================
-
-// Sets background image
-%svg-sprite {
-    display: inline-block;
-    background-image: url(map-get($svg-sprite, svgPath));
-    background-size: map-get($svg-sprite, width), map-get($svg-sprite, height);
-}
-
-// ================ MIXINS ==================
-
-// For use with the gulp sprite plugin
-
-/*
-* This sprite mixin takes in 2 parameters - 
-the first is the name of the icon you want, 
-while the second is optional and allows the user 
-to specify size or bg to get the specific attributes.
-*/
-
-/* 
-This mixin - it is absolutely MAGIC !!!!
-Do not touch!!!!
-*/
-@mixin svg-sprite($icon, $size: 16, $text-align: left, $type: all) {
-    $iconMap: svg-icon-attr($icon);
-    
-    line-height: 0; // magic here 
-    height: (map-get($iconMap, height) + 1) * ($size / 16); // magic here
-
-
-    @if $text-align == left {
-        text-align: left; // magic here DO NOT TOUCH!
-    } @else if $text-align == center {
-        text-align: center; // magic here DO NOT TOUCH! 
-    } @else if $text-align == right {
-        text-align: right; // magic here DO NOT TOUCH!
+    width: $size + em;
+    height: $size + em;
+    @if $align==left {
+        justify-self: flex-start;
     }
-
-    &:before {
-        content: ' ';
-
-        @if $type == all {
-            // Shares the backgrounds
-            @extend %svg-sprite;
-        }
-
-        // Outputs dimensions
-        @if $type == all or $type == size {
-            width: map-get($iconMap, width)+1; // magic here
-            height: map-get($iconMap, height)+1; // magic here
-        }
-
-        // Outputs background position
-        @if $type == all or $type == bg {
-            background-repeat: no-repeat;
-            background-position: map-get($iconMap, x) map-get($iconMap, y);
-        }
-
-        // MAGIC BYCYCLE !!! DO NOT TOUCH!
-        
-        @if $text-align == left {
-            transform-origin: top left 0; // magic here
-        } @else if $text-align == center {
-            transform-origin: top 0; // magic here
-        } @else if $text-align == right {
-            transform-origin: top right 0; // magic here
-        }
-
-        transform: scale($size / 16); // magic here
-        
-
-        margin-left: (-$size / 16) + px; // magic here 
-        margin-top: (-$size / 16) + px; // magic here 
+    @else if $align==center {
+        justify-self: center;
+        margin: auto;
+    }
+    @else if $align==right {
+        justify-self: flex-end;
+        margin-left: auto;
+        order: 1;
     }
 }
+
+
+// keyframes for image-hovers
+
+// @keyframes shine {
+//     100% {
+//         left: 125%;
+//     }
+// }

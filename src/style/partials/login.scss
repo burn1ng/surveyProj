@@ -1,6 +1,6 @@
 .form-signin {
     max-width: 100%;
-    padding: 15px;
+    padding: 15px 0;
     & .form-signin-heading, .form-signin .checkbox {
         margin-bottom: 10px;
     }
@@ -38,132 +38,24 @@
     max-width: 345px;
     margin: 0 auto;
     margin-top: 20px;
-    padding: 40px 0px 20px 0px;
+    padding: 40px 15px 20px 15px;
     background-color: #f7f7f7;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.login-title {
-    font-size: 2em;
-}
-
-// .login-logo {
-//     // @include svg-sprite(login, 120, center);
-// }
-// $baseFontSize: 16px !default; //  is used for the mq-px2em calculation BASED SIZE OF BODY!
-// // ================ FUNCTIONS ==================
-// @function svg-sprite-attr($icon, $attr) {
-//     $newIcon: map-get($svg-icons, $icon);
-//     @if $newIcon == null {
-//         @warn "Can't find an icon with the name #{$icon}";
-//     }
-//     @return map-get($newIcon, $attr);
-// }
-// @function svg-icon-attr($icon) {
-//     $attr: (
-//         width: svg-sprite-attr($icon, width),
-//         height: svg-sprite-attr($icon, height),
-//         x: svg-sprite-attr($icon, backgroundX),
-//         y: svg-sprite-attr($icon, backgroundY)
-//     );
-//     @return $attr;
-// }
-// // ================ PLACEHOLDERS ==================
-// // Sets background image
-// %svg-sprite {
-//     display: inline-block;
-//     background-image: url(map-get($svg-sprite, svgPath));
-//     background-size: map-get($svg-sprite, width), map-get($svg-sprite, height);
-// }
-// // ================ MIXINS ==================
-// // For use with the gulp sprite plugin
-// /*
-// * This sprite mixin takes in 2 parameters - 
-// the first is the name of the icon you want, 
-// while the second is optional and allows the user 
-// to specify size or bg to get the specific attributes.
-// */
-// /* 
-// This mixin - it is absolutely MAGIC !!!!
-// Do not touch!!!!
-// */
-// @mixin svg-sprite($icon, $size: 16, $text-align: left, $type: all) {
-//     $iconMap: svg-icon-attr($icon);
-//     line-height: 0; // magic here 
-//     height: (map-get($iconMap, height) + 1) * ($size / 16); // magic here
-//     @if $text-align == left {
-//         text-align: left; // magic here DO NOT TOUCH!
-//     } @else if $text-align == center {
-//         text-align: center; // magic here DO NOT TOUCH! 
-//     } @else if $text-align == right {
-//         text-align: right; // magic here DO NOT TOUCH!
-//     }
-//     &:before {
-//         content: ' ';
-//         @if $type == all {
-//             // Shares the backgrounds
-//             @extend %svg-sprite;
-//         }
-//         // Outputs dimensions
-//         @if $type == all or $type == size {
-//             width: map-get($iconMap, width)+1; // magic here
-//             height: map-get($iconMap, height)+1; // magic here
-//         }
-//         // Outputs background position
-//         @if $type == all or $type == bg {
-//             background-repeat: no-repeat;
-//             background-position: map-get($iconMap, x) map-get($iconMap, y);
-//         }
-//         // MAGIC BYCYCLE !!! DO NOT TOUCH!
-//         @if $text-align == left {
-//             transform-origin: top left 0; // magic here
-//         } @else if $text-align == center {
-//             transform-origin: top 0; // magic here
-//         } @else if $text-align == right {
-//             transform-origin: top right 0; // magic here
-//         }
-//         transform: scale($size / 16); // magic here
-//         margin-left: (-$size / 16) + px; // magic here 
-//         margin-top: (-$size / 16) + px; // magic here 
-//     }
-// }
-%svg-sprite-dims {
-    width: 1.5em;
-    height: 1.5em;
-}
-
-@mixin svg-size-align($size: 16, $align: left) {
-    @if $size==16 {
-        // Shares the dimensions
-        @extend %svg-sprite-dims;
+.login {
+    &-title {
+        font-size: 2em;
     }
-    width: $size + em;
-    height: $size + em;
-
-    @if $align==center {
-        display: block;
-        margin: auto;
-    } @else if $align==right {
-        position: relative;
-        top: 0;
-        right: 0;
-    }
-    
-}
-
-.login-logo {
-    // additional styling
-    @include svg-size-align(5, center);
-    transition: all 0.5s ease;
-    &:hover {
-        cursor: pointer;
-        fill: $brand-primary; // styling on hover
-        transform: scale(1.2);
-    }
-    &::after {
-        display: table;
-        content: '';
-        clear: both;
+    &-logo {
+        // additional styling
+        @include svg-size-align(5, center);
+        transition: all 0.5s ease;
+        &:hover {
+            cursor: pointer;
+            fill: $brand-primary; // styling on hover
+            transform: scale(1.1) rotate(360deg);
+        }
     }
 }
 

@@ -3,43 +3,44 @@
 */
 
 //@import "../../bower_components/normalize-css/normalize"; //don't need .css 
-@import "../../bower_components/sass-mq/_mq";
 
 /*
- * Redefined Bootstrap's variables MUST BE BEFORE @import "bootstrap_custom". Below you can seee example of usage.
+ * Redefined Bootstrap's variables MUST BE BEFORE @import "bootstrap_custom".
 */
+
 $icon-font-path: "/bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-
 $brand-primary: #eb1c23;
-
 $link-color: $brand-primary;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
-
 $navbar-default-toggle-hover-bg: $brand-primary; //** it was #ddd;
 $navbar-default-toggle-hover-icon-bar-bg: #fff; //** new variable
-
+//** Number of columns in the grid.
+$grid-columns: 18 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width: 20px !default;
 @import "_bootstrap_custom"; // all styles of bootstrap here 
-
 
 /*
 * png sprite, svg sprite
 */
+
 @import "partials/_sprite"; //png sprite scss
-
-/*@import "partials/svg-out/_svg-sprite"; //svg sprite scss
-$svg-sprite: map-get($svg-icons, svg-sprite) !default; // sets up the variable for the main sprite data (file path, dimensions etc.) 
-// this variable MUST BE UNDER IMPORT!!!!
-
-@import 'partials/svg_tpl/mixins'; // we need mixins to generate magic code! :)
-*/
+@import 'partials/svg_tpl/mixins';
 
 /*
 * Custom .scss
 */
 
+//Fonts variables
+$medium: 'RobotoMedium', sans-serif;
+$light: 'RobotoLight', sans-serif;
+$thin: 'RobotoThin', sans-serif;
 @import "partials/app";
 @import "partials/header";
 @import "partials/login";
 @import "partials/register";
+@import "partials/sidebar";
+@import "partials/about-main";
 @import "partials/copyright";
+

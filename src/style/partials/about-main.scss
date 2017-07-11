@@ -1,0 +1,18 @@
+.heading {
+    &-about {
+        font: 3em/1.25 $medium;
+    }
+    &-figure {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        & img {
+            transform: scale(1);
+            transition: .3s ease-in-out;
+        }
+        &:hover img {
+            transform: scale(1.1);
+        }
+    }
+}
+
