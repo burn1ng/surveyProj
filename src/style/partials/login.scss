@@ -153,11 +153,12 @@
 
 .login-logo {
     // additional styling
-    @include svg-size-align(2, right);
-    transition: fill 0.2s ease;
+    @include svg-size-align(5, center);
+    transition: all 0.5s ease;
     &:hover {
         cursor: pointer;
         fill: $brand-primary; // styling on hover
+        transform: scale(1.2);
     }
     &::after {
         display: table;
