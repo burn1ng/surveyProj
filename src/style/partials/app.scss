@@ -90,10 +90,15 @@ label {
 
 .icon-wrapper {
     display: flex;
+    align-items: center;
     & svg {
         fill: currentColor;
-        //
     }
+}
+
+svg {
+    fill: currentColor;
+    vertical-align: middle;
 }
 
 .vcenter {

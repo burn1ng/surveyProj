@@ -7,17 +7,16 @@
         margin-right: 5%;
     }
     &__figure {
-    	flex: 1;
+        flex: 1;
         min-height: 6em;
         min-width: 60%;
         background: url(../img/about-banner.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-
         cursor: pointer;
         transform: scale(1);
-		transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
         &:hover {
             transform: scale(1.05);
         }
@@ -25,5 +24,16 @@
 }
 
 .tab-content {
-	padding: 2em 0 1em;
+    padding: 2em 0 1em;
 }
+
+.user-icon {
+    @include svg-size-align(2, left);
+    transition: all 0.5s ease;
+    // &:hover {
+    //     cursor: pointer;
+    //     fill: $brand-primary; // styling on hover
+    //     transform: scale(1.1) rotate(360deg);
+    // }
+}
+
