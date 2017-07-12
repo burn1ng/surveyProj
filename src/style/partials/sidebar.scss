@@ -1,12 +1,14 @@
-.btn-block {
-    margin: 20px 0;
-    white-space: pre-wrap; // may be here will be better solution
-    & + .btn-block {
-        //override bootstrap margins
-        margin-top: 20px;
-    }
-    &:last-child {
-    	margin-bottom: 40px;
+.sidebar-wrapper {
+    & .btn-block {
+        margin: 20px 0;
+        white-space: pre-wrap; // may be here will be better solution
+        & + .btn-block {
+            //override bootstrap margins
+            margin-top: 20px;
+        }
+        &:last-child {
+            margin-bottom: 40px;
+        }
     }
 }
 
