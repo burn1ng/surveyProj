@@ -1,6 +1,7 @@
 .header-wrapper {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 3em;
     &__heading {
         font: 3em $medium;
         margin-right: 5%;
@@ -18,8 +19,11 @@
         transform: scale(1);
 		transition: .3s ease-in-out;
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
     }
 }
 
+.tab-content {
+	padding: 2em 0 1em;
+}

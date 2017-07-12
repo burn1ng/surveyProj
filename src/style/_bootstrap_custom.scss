@@ -5,8 +5,8 @@
  */
 
 // Core variables and mixins
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables"; //need
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins"; //need
 
 // Reset and dependencies
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
@@ -25,10 +25,10 @@
 // Components
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/button-groups"; //need
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/navs";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/navs"; //need
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/navbar"; //need
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pager";

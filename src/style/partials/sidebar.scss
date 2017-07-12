@@ -1,14 +1,19 @@
-.sidebar-wrapper {
-    display: table-cell;
-    border-right: solid $gray-lighter 1px;
-}
-
 .btn-block {
     margin: 20px 0;
     white-space: pre-wrap; // may be here will be better solution
     & + .btn-block {
         //override bootstrap margins
         margin-top: 20px;
+    }
+    &:last-child {
+    	margin-bottom: 40px;
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .sidebar-wrapper {
+        display: table-cell;
+        border-right: solid $gray-lighter 1px;
     }
 }
 
