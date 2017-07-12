@@ -16,6 +16,7 @@
     .sidebar-wrapper {
         display: table-cell;
         border-right: solid $gray-lighter 1px;
+        height: 80vh; //TODO find better solution to make 100% height of sidebar
     }
 }
 

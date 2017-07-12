@@ -5,24 +5,21 @@
 
   //= template/head_meta.html
 
-  <title>About company | SurveyMonkey</title>
+  <title>About | SurveyMonkey Admin Panel</title>
 
 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A48ca1bb2b8509261e6146553b9a7be783f39abf504061bb37ff4a9d13fcbd9f8&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true&amp;id=contactsMap"></script>
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <style>
-    .cool-hack {position:absolute; left:0; right:0; top:0; bottom:0;cursor:not-allowed;}
-  </style>
 </head>
 
 <body>
 
-  //= template/header-anon.html
+  //= template/admin/header-admin.html
 
   <div class="container-fluid">
   	<div class="row">
   		<div class="col-sm-4 sidebar-wrapper">
-			//= template/sidebar-anon.html
+			//= template/admin/sidebar-admin.html
   		</div>
 
   		<div class="col-sm-14 main-wrapper">
@@ -34,12 +31,6 @@
   //= template/copyright.html
 
   <script type="text/javascript" src="js/main.js"></script>
-  <script>
-    var disabledSidebar = document.getElementById('sidebarAnon');
-    disabledSidebar.addEventListener( "click" , function() {
-      location.href = "index.html";
-    });
-  </script>
 </body>
 
 </html>
