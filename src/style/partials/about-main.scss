@@ -1,16 +1,22 @@
-.heading {
-    &-about {
-        font: 3em/1.25 $medium;
+.header-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    &__heading {
+        font: 3em $medium;
+        margin-right: 5%;
     }
-    &-figure {
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        & img {
-            transform: scale(1);
-            transition: .3s ease-in-out;
-        }
-        &:hover img {
+    &__figure {
+    	flex: 1;
+        min-height: 6em;
+        min-width: 60%;
+        background: url(../img/about-banner.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        transform: scale(1);
+		transition: .3s ease-in-out;
+        &:hover {
             transform: scale(1.1);
         }
     }
