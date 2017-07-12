@@ -12,7 +12,7 @@ var gulp = require('gulp'),
     browserSync = require("browser-sync"),
     merge = require('merge-stream'),
     spritesmith = require('gulp.spritesmith'),
-    runSequence = require('run-sequence'), // correct finish of the previous task - to start next
+    runSequence = require('run-sequence'),
     reload = browserSync.reload;
 
 var $ = {
@@ -147,33 +147,33 @@ gulp.task('js:build', function() {
 });
 gulp.task('style:build', function() {
     return gulp.src(path.src.style) // get only main.scss (all scss files included from partials there)
-        .pipe(sass.sync(sassOptions).on('error', sass.logError)) //compile SCSS/SASS to css, log the errors without falling down
-        .pipe(prefixer(autoPrefixerOptions)) //add vendor-prefixes
+        .pipe(sass.sync(sassOptions).on('error', sass.logError))
+        .pipe(prefixer(autoPrefixerOptions))
         //.pipe(cssnano()) // minify
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({ stream: true }));
 });
 gulp.task('image:build', function() {
     return gulp.src(path.src.img)
-        .pipe(imagemin(imageMinOptions)) //optimise images
+        .pipe(imagemin(imageMinOptions))
         .pipe(gulp.dest(path.build.img))
         .pipe(reload({ stream: true }));
 });
 gulp.task('favicon:build', function() {
     return gulp.src(path.src.favicon)
-        .pipe(gulp.dest(path.build.favicon)) // simple copy all favicons and manifest.json
+        .pipe(gulp.dest(path.build.favicon))
 });
 gulp.task('fonts:build', function() {
     return gulp.src(path.src.fonts)
-        .pipe(gulp.dest(path.build.fonts)) // simple copy
+        .pipe(gulp.dest(path.build.fonts))
 });
 gulp.task('sprite:generate', function() {
     var spriteData = gulp.src(path.src.icons)
-        .pipe(spritesmith(spriteOptions)); // Generate our spritesheet 
+        .pipe(spritesmith(spriteOptions)); // generate spritesheet 
     var imgStream = spriteData.img
-        .pipe(gulp.dest('src/img/')); // destination - to source files, because other task will do optimise process
+        .pipe(gulp.dest('src/img/')); // to source files, because other task will do optimise process
     var cssStream = spriteData.css
-        .pipe(gulp.dest('src/style/partials/')); // other task will compile, concat, and minify this styles(SCSS/SASS) with other styles
+        .pipe(gulp.dest('src/style/partials/')); // other task will compile & concat & minify generated styles with other styles
     return merge(imgStream, cssStream); // Return a merged stream to handle both `end` events 
 });
 
@@ -192,8 +192,7 @@ gulp.task('sprite-svg:generate', function() {
                     },
                     dest: './', // destination folder
                     prefix: '.svg--%s', // BEM-style prefix if styles rendered
-                    sprite: '/build/img/svg-sprite.svg',
-                    example: true
+                    sprite: '/build/img/svg-sprite.svg'
                 }
             }
         }))

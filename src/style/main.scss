@@ -2,7 +2,7 @@
 * Third Party
 */
 
-//@import "../../bower_components/normalize-css/normalize"; //don't need .css 
+// example of usage: @import "../../bower_components/normalize-css/normalize"; //don't need .css 
 
 /*
  * Redefined Bootstrap's variables MUST BE BEFORE @import "bootstrap_custom".
@@ -13,29 +13,28 @@ $brand-primary: #eb1c23;
 $link-color: $brand-primary;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
-$navbar-default-toggle-hover-bg: $brand-primary; //** it was #ddd;
-$navbar-default-toggle-hover-icon-bar-bg: #fff; //** new variable
-//** Number of columns in the grid.
-$grid-columns: 18 !default;
-//** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width: 20px !default;
-@import "_bootstrap_custom"; // all styles of bootstrap here 
+$navbar-default-toggle-hover-bg: $brand-primary;
+$navbar-default-toggle-hover-icon-bar-bg: #fff;
+$grid-columns: 18 !default; //** Number of columns in the grid.
+$grid-gutter-width: 20px !default; //** Padding between columns. Gets divided in half for the left and right.
+@import "_bootstrap_custom";
 
 /*
-* png sprite, svg sprite
+* png sprite
 */
 
-@import "partials/_sprite"; //png sprite scss
-@import 'partials/svg_tpl/mixins';
+@import "partials/_sprite"; // generated scss from png.sprite 
 
 /*
 * Custom .scss
 */
 
+@import 'partials/mixins';
 //Fonts variables
 $medium: 'RobotoMedium', sans-serif;
 $light: 'RobotoLight', sans-serif;
 $thin: 'RobotoThin', sans-serif;
+
 @import "partials/app";
 @import "partials/header";
 @import "partials/login";
