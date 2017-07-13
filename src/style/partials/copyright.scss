@@ -2,6 +2,8 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    background-color: $navbar-default-bg;
+    z-index: 99999999;
 }
 
 .copy-static-bottom {
