@@ -1,3 +1,10 @@
-.copy-static-bottom {
-	padding: 2em 0;
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
+
+.copy-static-bottom {
+    padding: 2em 0;
+}
+

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"> 
 
   //= template/head_meta.html
 
   <title>About | SurveyMonkey Admin Panel</title>
 
-<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A48ca1bb2b8509261e6146553b9a7be783f39abf504061bb37ff4a9d13fcbd9f8&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true&amp;id=contactsMap"></script>
+  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A48ca1bb2b8509261e6146553b9a7be783f39abf504061bb37ff4a9d13fcbd9f8&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true&amp;id=contactsMap"></script>
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -16,16 +17,16 @@
 
   //= template/admin/header-admin.html
 
-  <div class="container-fluid">
-  	<div class="row">
-  		<div class="col-sm-4 sidebar-wrapper">
-			//= template/admin/sidebar-admin.html
-  		</div>
+  <div class="page-wrapper toggled">
 
-  		<div class="col-sm-14 main-wrapper">
-  			//= template/about-main.html
-  		</div>
-  	</div>
+    <div class="container sidebar-wrapper">
+      //= template/admin/sidebar-admin.html
+    </div>
+
+    <div class="container main-wrapper">
+      //= template/about-main.html
+    </div>
+
   </div>
 
   //= template/copyright.html
