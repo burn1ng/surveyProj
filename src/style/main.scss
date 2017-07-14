@@ -19,6 +19,8 @@ $grid-columns: 18 !default; //** Number of columns in the grid.
 $grid-gutter-width: 20px !default; //** Padding between columns. Gets divided in half for the left and right.
 @import "_bootstrap_custom";
 
+
+
 /*
 * png sprite
 */
@@ -31,9 +33,12 @@ $grid-gutter-width: 20px !default; //** Padding between columns. Gets divided in
 
 @import 'partials/mixins';
 //Fonts variables
-$medium: 'RobotoMedium', sans-serif;
-$light: 'RobotoLight', sans-serif;
-$thin: 'RobotoThin', sans-serif;
+$medium: 'RobotoMedium',
+sans-serif;
+$light: 'RobotoLight',
+sans-serif;
+$thin: 'RobotoThin',
+sans-serif;
 
 @import "partials/app";
 @import "partials/header";
@@ -41,5 +46,5 @@ $thin: 'RobotoThin', sans-serif;
 @import "partials/register";
 @import "partials/sidebar";
 @import "partials/about-main";
+@import "partials/users";
 @import "partials/copyright";
-

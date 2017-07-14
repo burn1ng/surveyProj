@@ -1,0 +1,67 @@
+.users-table {
+    th,
+    td {
+        vertical-align: middle;
+        text-align: center;
+    }
+    tr {
+        & td:first-child {
+            text-align: left;
+        }
+    }
+
+    td>a {
+    	text-decoration: none; // fix underline for svg controls
+    }
+
+    & svg {
+        transition: all 0.2s;
+        color: initial;
+    }
+    & a {
+        color: initial;
+    }
+    .icon-wrapper {
+        justify-content: center;
+        & svg {
+            margin: 0 5px;
+        }
+    }
+    & .navbar-nav {
+        //override bootstrap
+        height: 2em;
+        li a {
+            line-height: 2em;
+        }
+    }
+    &>tbody>tr>td,
+    &>thead>tr>th {
+        //override bootstrap
+        vertical-align: middle;
+    }
+}
+
+.search-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-edit,
+.icon-delete,
+.icon-arrow {
+    @include svg-size-align(1.5);
+    &:hover {
+        color: $brand-primary;
+    }
+}
+
+.icon-search {
+	@include svg-size-align(1);
+}
+
+
+.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+    //override bootstrap
+    outline: none;
+}
