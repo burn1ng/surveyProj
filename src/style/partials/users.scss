@@ -3,48 +3,57 @@
     td {
         vertical-align: middle;
         text-align: center;
-    }
-    tr {
-        & td:first-child {
-            text-align: left;
+        &:first-child {
+            text-align: left; // first column without centering
         }
     }
 
-    td>a {
-    	text-decoration: none; // fix underline for svg controls
+    td:last-child {
+        & a {
+            text-decoration: none; // fix underline for svg controls
+        }
+        & ul {
+            right: 0; // controls ul must open from right to left!
+            left: auto;
+        }
     }
-
-    & svg {
+    svg {
         transition: all 0.2s;
         color: initial;
     }
-    & a {
-        color: initial;
-    }
-    .icon-wrapper {
+    & .icon-wrapper {
         justify-content: center;
         & svg {
             margin: 0 5px;
         }
     }
-    & .navbar-nav {
-        //override bootstrap
-        height: 2em;
-        li a {
-            line-height: 2em;
-        }
+    & tfoot td:last-child {
+        white-space: nowrap;
     }
-    &>tbody>tr>td,
-    &>thead>tr>th {
+    & > tbody  >tr > td,
+    & > thead > tr > th,
+    & > tfoot > tr > td {
         //override bootstrap
         vertical-align: middle;
+    }
+    & .nav-pills > li {
+        //override bootstrap
+        float:none;
     }
 }
 
 .search-heading {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    & a.btn-primary { //only cta button
+        margin: 0 4em 0 1em; 
+    }
+    & form {
+        // max-width: 50%;
+        flex: 1;
+        margin: 1em 0 1em auto;
+    }
 }
 
 .icon-edit,
@@ -57,11 +66,20 @@
 }
 
 .icon-search {
-	@include svg-size-align(1);
+    @include svg-size-align(1);
 }
 
 
-.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+.btn:focus,
+.btn.focus,
+.btn:active:focus,
+.btn:active.focus,
+.btn.active:focus,
+.btn.active.focus {
     //override bootstrap
     outline: none;
+}
+
+li.dropdown {
+    white-space: nowrap;
 }

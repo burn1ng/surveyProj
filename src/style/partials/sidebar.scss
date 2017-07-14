@@ -1,4 +1,8 @@
 .sidebar-wrapper {
+    & a[type=button].current {
+        background-color: #fff;
+        color: $brand-primary;
+    }
     & .btn-block {
         margin: 20px 0;
         white-space: pre-wrap; // may be here will be better solution
