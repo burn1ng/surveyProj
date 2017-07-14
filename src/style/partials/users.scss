@@ -36,6 +36,9 @@
         //override bootstrap
         vertical-align: middle;
     }
+    & .nav > li {
+        text-align: center;
+    }
     & .nav-pills > li {
         //override bootstrap
         float:none;
@@ -46,11 +49,16 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    & a.btn-primary { //only cta button
-        margin: 0 4em 0 1em; 
+    & .form-group {
+        flex: 1;
+    }
+    & h3 {
+        margin-right: 1em;
+    }
+    & .cta-btn { //only cta button
+        margin-right: 4em; 
     }
     & form {
-        // max-width: 50%;
         flex: 1;
         margin: 1em 0 1em auto;
     }
