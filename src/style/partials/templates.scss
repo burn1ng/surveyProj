@@ -1,0 +1,52 @@
+.templates {
+	margin-bottom: 4em;
+    &__wrapper {
+        position: relative;
+        border: 2px solid $gray-lighter;
+        margin: 2.5em 0 1em;
+        border-radius: 8px;
+        transition: all .3s ease;
+        &__bottom-shadows {
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                bottom: 12px;
+                width: 50%;
+                height: 20%;
+                max-height: 100px;
+                box-shadow: 0 15px 10px rgba(0, 0, 0, 0);
+                transition: all .3s ease;
+            }
+            &::before {
+                left: 7px;
+                transform: rotate(-4deg);
+            }
+            &::after {
+                right: 7px;
+                transform: rotate(4deg);
+            }
+            &:hover::after,
+            &:hover::before {
+                box-shadow: 0 15px 10px rgba(0, 0, 0, .7);
+            }
+        }
+    }
+    &__inner {
+        padding: 1em;        
+        background-color: $body-bg;
+        border-radius: 8px; //the same for wrapper, don'touch
+        border-top: 1px solid transparent; // fix margin collapse
+        & .cta-btn {
+            margin-bottom: 10px;
+        }
+        & .heading {
+            font-weight: bold;
+        }
+        &__description {
+        	font-size: 0.9em;
+        	line-height: 1.15;
+        }
+    }
+}

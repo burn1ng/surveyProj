@@ -50,7 +50,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    & h3 {
+    &__title {
         margin-right: 1em;
     }
     & .cta-btn { //only cta button

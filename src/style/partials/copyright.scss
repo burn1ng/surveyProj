@@ -1,5 +1,6 @@
 footer {
     position: absolute;
+    line-height: 1; // important for padding in em;
     bottom: 0;
     width: 100%;
     background-color: $navbar-default-bg;
