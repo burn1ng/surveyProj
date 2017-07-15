@@ -1,11 +1,31 @@
 .templates {
-	margin-bottom: 4em;
+    &__header-controls {
+        line-height: 1;
+        & a {
+            margin: 0.4em;
+            color: initial;
+        }
+        &.icon-wrapper {
+            justify-content: flex-end;
+            visibility: hidden;
+        }
+        & svg {
+            @include svg-size-align(1.4)
+        }
+    }
     &__wrapper {
         position: relative;
         border: 2px solid $gray-lighter;
-        margin: 2.5em 0 1em;
+        margin-bottom: 1em;
         border-radius: 8px;
         transition: all .3s ease;
+        &:hover .icon-wrapper {
+            visibility: visible; // show controls higher than wrapper
+        }
+        & .panel-body {
+            //override bootstrap
+            padding: 5px 10px
+        }
         &__bottom-shadows {
             &::after,
             &::before {
@@ -17,7 +37,7 @@
                 height: 20%;
                 max-height: 100px;
                 box-shadow: 0 15px 10px rgba(0, 0, 0, 0);
-                transition: all .3s ease;
+                transition: box-shadow .3s ease;
             }
             &::before {
                 left: 7px;
@@ -34,19 +54,19 @@
         }
     }
     &__inner {
-        padding: 1em;        
+        padding: 0 1em 1em;
         background-color: $body-bg;
         border-radius: 8px; //the same for wrapper, don'touch
         border-top: 1px solid transparent; // fix margin collapse
         & .cta-btn {
             margin-bottom: 10px;
         }
-        & .heading {
+        &__heading {
             font-weight: bold;
         }
         &__description {
-        	font-size: 0.9em;
-        	line-height: 1.15;
+            font-size: 0.9em;
+            line-height: 1.15;
         }
     }
 }

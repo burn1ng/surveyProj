@@ -28,9 +28,7 @@ html {
 body {
     font: normal 16px $light, sans-serif;
     padding: 0;
-    /* Margin bottom by footer height */
-    //line-height: 1;
-    margin: 0 0 5em;
+    margin: 0 0 10em;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -188,6 +186,13 @@ svg {
     float: none;
 }
 
+//use bootstrap mixin
+.btn-light {
+  @include button-variant($brand-primary, $body-bg, $btn-primary-border);
+  &:hover {
+    background-color: #fff;
+  }
+}
 /*
 Firefox and fieldsets
 Firefox has some awkward fieldset styling involving width that interferes with the responsive table. 
