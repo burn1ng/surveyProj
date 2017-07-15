@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> 
+
+  //= template/head_meta.html
+
+  <title>Surveys templates | SurveyMonkey Admin Panel</title>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+  //= template/admin/header-admin.html
+
+  <div class="page-wrapper toggled">
+
+    <div class="container sidebar-wrapper">
+      //= template/admin/sidebar-admin.html
+    </div>
+
+    <div class="container main-wrapper">
+      //= template/admin/templates-admin-main.html
+    </div>
+
+  </div>
+
+  //= template/copyright.html
+
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    var currentButtonActive = document.getElementById('surveyTemplatesLink');
+    currentButtonActive.classList.add("current");
+  </script>
+</body>
+
+</html>

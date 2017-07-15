@@ -1,6 +1,7 @@
 .header-wrapper {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 2em;
     margin-bottom: 3em;
     &__heading {
         font: 3em $medium;
