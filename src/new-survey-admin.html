@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> 
+
+  //= template/head_meta.html
+
+  <title>New Survey | SurveyMonkey Admin Panel</title>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+  //= template/admin/header-admin.html
+
+  <div class="page-wrapper toggled">
+
+    <div class="container sidebar-wrapper">
+      //= template/admin/sidebar-admin.html
+    </div>
+
+    <div class="container main-wrapper">
+      <div class="row">
+        <div class="col-xs-16 col-xs-offset-1">
+          //= template/admin/new-survey-admin-main.html
+        </div>
+      </div>      
+    </div>
+
+  </div>
+
+  //= template/copyright.html
+
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    var currentButtonActive = document.getElementById('newSurveyLink');
+    currentButtonActive.classList.add("current");
+  </script>
+</body>
+
+</html>
