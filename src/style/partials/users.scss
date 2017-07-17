@@ -46,10 +46,11 @@
     z-index: 999999999;
 }
 
-.search-heading {
+.input-heading {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 1em; // global style for all pages
     &__title {
         margin-right: 1em;
     }

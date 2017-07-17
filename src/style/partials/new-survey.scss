@@ -1,0 +1,20 @@
+.input-heading {
+    & .input-group {
+        width: 100%;
+        & .form-control:last-child {
+            //override bootstrap
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+    }
+}
+
+.action-controls {
+	margin-bottom: 2em;
+	& a {
+		margin: 0.5em 0;
+	}
+    & a:not(:last-child) {
+        margin-right: 1em;
+    }
+}

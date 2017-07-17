@@ -1,21 +1,37 @@
-<div class="search-heading">
+<div class="input-heading">
     <div class="form-group">
-        <h1 class="search-heading__title">New survey</h1>
+        <h1 class="input-heading__title">New survey</h1>
     </div>
     <form>
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" id="txtSearch" />
-            <div class="input-group-btn">
-                <button class="btn btn-primary" type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-search">
-                        <use xlink:href="img/svg-sprite.svg#search"></use>
-                    </svg>
-                </button>
-            </div>
+        <div class="input-group input-custom">
+            <label class="sr-only" for="newSurveyName">Type name of your new survey...</label>
+            <input type="text" class="form-control" id="newSurveyName" placeholder="My mew survey">
         </div>
     </form>
 </div>
-<a href="#" type="button" class="btn btn-light btn-md cta-btn">Save</a>
-<a href="#" type="button" class="btn btn-light btn-md cta-btn">Save as template</a>
-<a href="#" type="button" class="btn btn-light btn-md cta-btn">Cancel</a>
-<a href="#" type="button" class="btn btn-light btn-md cta-btn pull-right">New page</a>
+<div class="action-controls">
+    <a href="#" type="button" class="btn btn-light btn-md">Save</a>
+    <a href="#" type="button" class="btn btn-light btn-md">Save as template</a>
+    <a href="#" type="button" class="btn btn-light btn-md">Cancel</a>
+    <a href="#" type="button" class="btn btn-light btn-md pull-right">New page</a>
+</div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist" id="new-survey-tabs">
+    <li role="presentation"><a href="#survey-editor-page-1" aria-controls="survey-editor-page-1" role="tab" data-toggle="tab">Page 1</a></li>
+    <li role="presentation" class="active"><a href="#survey-editor-page-2" aria-controls="survey-editor-page-2" role="tab" data-toggle="tab">Page 2</a></li>
+    <li role="presentation"><a href="#survey-editor-page-3" aria-controls="survey-editor-page-3" role="tab" data-toggle="tab">Page 3</a></li>
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane" id="new-survey-tabs">
+        <div class="row">
+            <div class="col-xs-18">
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, perferendis.</p>
+            </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="survey-editor-page-1">Lorem e.</div>
+    <div role="tabpanel" class="tab-pane fade in active" id="survey-editor-page-2">Lom ex optio qui distinctio ab delectus?</div>
+    <div role="tabpanel" class="tab-pane fade" id="survey-editor-page-3">repellat fugit temporibus quas recusandae unde aperiam natus nostrum eius. Cum.</div>
+</div>
