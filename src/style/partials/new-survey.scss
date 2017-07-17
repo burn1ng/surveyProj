@@ -38,18 +38,11 @@
     }
     & a[role="button"] {
         text-decoration: none; //fix a > svg text decoration
-    }    
+    }
     & .nav>li>a:hover,
     .nav>li>a:focus {
         //override bootstrap
         background-color: $body-bg;
-    }
-    & .icon-required,
-    .icon-draggy {
-        @include svg-size-align(1.3);
-        &:hover {
-            fill: $brand-primary;
-        }
     }
 }
 
@@ -67,7 +60,7 @@
 
 .widget-controls {
     margin-bottom: 20px;
-    & .icon-dropdown {       
+    & .icon-dropdown {
         & .dropdown-menu-left {
             left: 0;
             right: auto;
@@ -81,6 +74,7 @@
         }
     }
 }
+
 .page-widget {
     position: relative;
     padding: 1em;
@@ -96,6 +90,16 @@
         border: 1px dashed $brand-primary;
         & .icon-wrapper {
             justify-content: space-between;
+        }
+        .drag-button {
+            cursor:pointer;
+            &:hover .icon-draggy {
+                cursor:pointer;
+                fill: $brand-primary;
+            }
+        }
+        & .icon-draggy {
+            @include svg-size-align(1.3);
         }
     }
 }
