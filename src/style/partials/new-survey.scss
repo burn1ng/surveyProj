@@ -10,11 +10,21 @@
 }
 
 .action-controls {
-	margin-bottom: 2em;
-	& a {
-		margin: 0.5em 0;
-	}
+    margin-bottom: 2em;
+    & a {
+        margin: 0.5em 0;
+    }
     & a:not(:last-child) {
         margin-right: 1em;
+    }
+}
+
+
+.new-survey {
+    .right-sidebar {
+        margin-bottom: 20px;
+    }
+    & .panel-body {
+        padding: 5px 10px;
     }
 }
