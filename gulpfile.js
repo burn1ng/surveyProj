@@ -192,11 +192,11 @@ gulp.task('sprite-svg:generate', function() {
                     },
                     dest: './', // destination folder
                     prefix: '.svg--%s', // BEM-style prefix if styles rendered
-                    sprite: '/build/img/svg-sprite.svg'
+                    sprite: 'svg-sprite.svg'
                 }
             }
         }))
-        .pipe(gulp.dest('src/style/partials/svg-out/')); // no need to reload - after generating will be style building with reloading
+        .pipe(gulp.dest('./build/img/')); // no need to reload - after generating will be style building with reloading
 });
 
 gulp.task('clean', function() {
