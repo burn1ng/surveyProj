@@ -1,4 +1,4 @@
-<div class="panel panel-info">
+<div class="panel">
     <div class="panel-body">
         <span class="questions">Questions: 12</span>, <span class="pages">Pages: 3</span>
     </div>
@@ -17,15 +17,96 @@
 </ul>
 <!-- Tab panes -->
 <div class="tab-content">
-    <div role="tabpanel" class="tab-pane" id="new-survey-tabs">
-        <div class="row">
-            <div class="col-xs-18">
-                <h3>Lorem ipsum dolor sit amet.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, perferendis.</p>
+    <div role="tabpanel" class="tab-pane fade" id="survey-editor-page-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, earum.</div>
+    <div role="tabpanel" class="tab-pane fade in active" id="survey-editor-page-2">
+        <div class="page-widget page-constructor">
+            <div class="widget-controls">
+                <div class="icon-wrapper">
+                    <a href="#" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-delete icon-page-control">
+                            <use xlink:href="img/svg-sprite.svg#delete"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="page-widget page-title">
+                <div class="input-group">
+                    <label class="sr-only" for="newSurveyName">Edit the name of page...</label>
+                    <input type="text" class="form-control rounded-input" id="newSurveyName" placeholder="Edit the name of page" value="Page 2">
+                </div>
+            </div>
+            <div class="page-widget checkbox-question">
+                <h4>1. Question with several variants of answer</h4>
+                <div class="input-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Answer 1</input>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Answer 2</input>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Answer 3</input>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="page-widget radio-question editable">
+                <div class="widget-controls">
+                    <div class="icon-wrapper">
+                        <a href="#" role="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-draggy">
+                                <use xlink:href="img/svg-sprite.svg#drag"></use>
+                            </svg>
+                            <span>Move</span>
+                        </a>
+                        <div class="icon-wrapper">
+                            <div class="checkbox-inline">
+                                <label class="no-select">
+                                    <input type="checkbox">Required
+                                </label>
+                            </div>
+                            <ul class="nav nav-pills icon-dropdown">
+                                <li role="presentation" class="dropdown">
+                                    <a id="delLabel" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-delete icon-dropdown">
+                                            <use xlink:href="img/svg-sprite.svg#delete"></use>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="delLabel">
+                                        <li><a href="#">Delete only this widget</a></li>
+                                        <li><a href="#">Delete all widgets of that type</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <input type="text" class="form-control" placeholder="Edit your question..." value="2. Question with one variant of answer">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked aria-label="Radio input for input field 1">
+                </span>
+                    <input type="text" class="form-control" aria-label="Edit this radio field..." value="Answer 1">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked aria-label="Radio input for input field 2">
+                </span>
+                    <input type="text" class="form-control" aria-label="Edit this radio field..." value="Answer 1">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" checked aria-label="Radio input for input field 3">
+                </span>
+                    <input type="text" class="form-control" aria-label="Edit this radio field..." value="Answer 1">
+                </div>
             </div>
         </div>
     </div>
-    <div role="tabpanel" class="tab-pane fade" id="survey-editor-page-1">Lorem e.</div>
-    <div role="tabpanel" class="tab-pane fade in active" id="survey-editor-page-2">Lom ex optio qui distinctio ab delectus?</div>
-    <div role="tabpanel" class="tab-pane fade" id="survey-editor-page-3">repellat fugit temporibus quas recusandae unde aperiam natus nostrum eius. Cum.</div>
+    <div role="tabpanel" class="tab-pane fade" id="survey-editor-page-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem culpa ut odio voluptatum fuga vero id quae sint reiciendis dolor, minus saepe, fugit omnis laborum provident facere veritatis placeat maiores quibusdam. In earum expedita facere, deserunt, ut rem quo possimus odio. Dolorem perferendis, est natus veniam eos, tempora aut. Architecto impedit autem ea numquam, accusantium blanditiis. Molestiae deleniti ipsam dicta quisquam illum ipsa expedita, harum aliquam, nobis odio at, id minus! Quam similique numquam expedita eaque alias a, dolorem sapiente nam repellendus iusto accusamus maiores velit corporis voluptas quod quos est laborum dolores suscipit ducimus, omnis sequi tempora, totam. Maxime.</div>
 </div>

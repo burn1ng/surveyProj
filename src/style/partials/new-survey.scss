@@ -1,11 +1,7 @@
-.input-heading {
+.input-heading,
+.new-survey {
     & .input-group {
         width: 100%;
-        & .form-control:last-child {
-            //override bootstrap
-            border-bottom-left-radius: 4px;
-            border-top-left-radius: 4px;
-        }
     }
 }
 
@@ -21,10 +17,91 @@
 
 
 .new-survey {
-    .right-sidebar {
-        margin-bottom: 20px;
-    }
     & .panel-body {
         padding: 5px 10px;
+    }
+    & .right-sidebar {
+        margin-bottom: 20px;
+    }
+    & a {
+        color: initial;
+    }
+    & .nav>a,
+    .nav>a:hover,
+    .nav>a:focus {
+        position: absolute; //z-index: 3; // do not touch
+        top: -2.2em;
+        left: -3em;
+    }
+    & .tab-content {
+        position: relative;
+    }
+    & a[role="button"] {
+        text-decoration: none; //fix a > svg text decoration
+    }    
+    & .nav>li>a:hover,
+    .nav>li>a:focus {
+        //override bootstrap
+        background-color: $body-bg;
+    }
+    & .icon-required,
+    .icon-draggy {
+        @include svg-size-align(1.3);
+        &:hover {
+            fill: $brand-primary;
+        }
+    }
+}
+
+.page-constructor {
+    & .icon-page-control {
+        @include svg-size-align(1.5);
+    }
+    & .widget-controls {
+        margin-bottom: 5px;
+    }
+    & .icon-wrapper {
+        justify-content: flex-end;
+    }
+}
+
+.widget-controls {
+    margin-bottom: 20px;
+    & .icon-dropdown {       
+        & .dropdown-menu-left {
+            left: 0;
+            right: auto;
+        }
+        & .dropdown-menu-right {
+            right: 0;
+            left: auto;
+        }
+        & .dropdown-toggle {
+            padding: 0;
+        }
+    }
+}
+.page-widget {
+    position: relative;
+    padding: 1em;
+    border-radius: 8px;
+    border: 1px solid $gray-lighter;
+    margin-bottom: 1em;
+    & label {
+        font-weight: normal;
+        width: 100%; // convenient way to check inputs
+        margin-right: 1em;
+    }
+    &.editable {
+        border: 1px dashed $brand-primary;
+        & .icon-wrapper {
+            justify-content: space-between;
+        }
+    }
+}
+
+.radio-question {
+    .input-group {
+        margin: 1em 0;
     }
 }
