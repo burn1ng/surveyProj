@@ -188,7 +188,7 @@ svg {
 
 //use bootstrap mixin
 .btn-light {
-  @include button-variant($brand-primary, $body-bg, $btn-primary-border);
+  @include button-variant($brand-primary, $body-bg, $gray-lighter);
   &:hover {
     background-color: #fff;
   }
