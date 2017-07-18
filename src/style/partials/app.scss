@@ -51,14 +51,12 @@ body {
 }
 
 .sidebar-wrapper {
-    z-index: 1000;
-    // position: absolute;
+    z-index: 1000; // position: absolute;
     position: fixed;
     left: 22.22222222222%;
     width: 0;
     height: 80%;
-    margin-left: -22.22222222222%;
-    // overflow-y: auto;
+    margin-left: -22.22222222222%; // overflow-y: auto;
     transition: all 0.5s ease;
 }
 
@@ -96,8 +94,7 @@ body {
             position: relative;
             width: 100%;
             left: 0;
-            margin: 0;
-            // overflow-y: initial;
+            margin: 0; // overflow-y: initial;
         }
         & .main-wrapper {
             position: relative;
@@ -121,7 +118,10 @@ body {
     padding: 0;
 }
 
-input:focus, a:focus, textarea:focus, select:focus {
+input:focus,
+a:focus,
+textarea:focus,
+select:focus {
     outline: none!important;
 }
 
@@ -138,11 +138,15 @@ label {
 }
 
 
+
+
 /* Firefox 19+ */
 
 :-moz-placeholder {
     @include placeholder();
 }
+
+
 
 
 /* Firefox 18- */
@@ -188,18 +192,33 @@ svg {
 
 //use bootstrap mixin
 .btn-light {
-  @include button-variant($brand-primary, $body-bg, $gray-lighter);
-  &:hover {
-    background-color: #fff;
-  }
+    @include button-variant($brand-primary,
+    $body-bg,
+    $gray-lighter);
+    &:active,
+    &:hover,
+    &:active:hover {
+        background-color: #fff;
+    }
+    &:hover,
+    &:focus {
+        background-color: initial;
+        color: initial;
+    }
 }
+
+
+
 /*
 Firefox and fieldsets
 Firefox has some awkward fieldset styling involving width that interferes with the responsive table. 
 This cannot be overridden without a Firefox-specific hack that we don't provide in Bootstrap:
 */
+
 @-moz-document url-prefix() {
-  fieldset { display: table-cell; }
+    fieldset {
+        display: table-cell;
+    }
 }
 
 
@@ -244,4 +263,3 @@ This cannot be overridden without a Firefox-specific hack that we don't provide 
 //     box-shadow: 0 15px 10px #fff;
 //     transition: box-shadow .2s;
 // }
-
