@@ -20,15 +20,6 @@
     <div role="tabpanel" class="tab-pane fade" id="survey-editor-page-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, earum.</div>
     <div role="tabpanel" class="tab-pane fade in active" id="survey-editor-page-2">
         <div class="page-widget page-constructor">
-            <!-- <div class="widget-controls">
-                <div class="icon-wrapper">
-                    <a href="#" role="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-delete icon-page-control">
-                            <use xlink:href="img/svg-sprite.svg#delete"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div> -->
             <div class="page-widget page-title">
                 <div class="widget-controls pull-right">
                     <a href="#" role="button">
@@ -74,8 +65,7 @@
                     <div class="drag-button" role="button">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon-draggy">
                             <use xlink:href="img/svg-sprite.svg#drag"></use>
-                        </svg>
-                        <span class="no-select">Move</span>
+                        </svg><!-- No space here required --><span class="no-select">Move</span>
                     </div>
                     <div class="checkbox-inline">
                         <label class="no-select">
@@ -171,7 +161,40 @@
                     <div class="panel-body quill-editor-container" id="quill-editor"></div>
                 </div>
             </div>
+            <div class="page-widget file-question">
+                <div class="widget-controls pull-right">
+                    <a href="#" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-edit">
+                            <use xlink:href="img/svg-sprite.svg#edit"></use>
+                        </svg>
+                    </a>
+                </div>
+                <h4>4. File - question</h4>
+                <div class="input-group">
+                    <label class="input-group-btn">
+                        <span class="btn btn-primary">Browse&hellip; 
+                            <input type="file" multiple>
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" disabled>
+                </div>
+                <span class="help-block">Select one or more files from your device</span>
+            </div>
+            <div class="page-widget rating-question">
+                <div class="widget-controls pull-right">
+                    <a href="#" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-edit">
+                            <use xlink:href="img/svg-sprite.svg#edit"></use>
+                        </svg>
+                    </a>
+                </div>
+                <h4>5. Question - rating</h4>
+                <div class="input-group">
+                    <input id="questionRating1" name="input-name" type="number" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs" data-show-caption="false">
+                </div>
+            </div>
         </div>
     </div>
-    <div role="tabpanel" class="tab-pane fade" id="survey-editor-page-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem culpa ut odio voluptatum fuga vero id quae sint reiciendis dolor, minus saepe, fugit omnis laborum provident facere veritatis placeat maiores quibusdam. In earum expedita facere, deserunt, ut rem quo possimus odio. Dolorem perferendis, est natus veniam eos, tempora aut. Architecto impedit autem ea numquam, accusantium blanditiis. Molestiae deleniti ipsam dicta quisquam illum ipsa expedita, harum aliquam, nobis odio at, id minus! Quam similique numquam expedita eaque alias a, dolorem sapiente nam repellendus iusto accusamus maiores velit corporis voluptas quod quos est laborum dolores suscipit ducimus, omnis sequi tempora, totam. Maxime.</div>
+</div>
+<div role="tabpanel" class="tab-pane fade" id="survey-editor-page-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem culpa ut odio voluptatum fuga vero id quae sint reiciendis dolor, minus saepe, fugit omnis laborum provident facere veritatis placeat maiores quibusdam. In earum expedita facere, deserunt, ut rem quo possimus odio. Dolorem perferendis, est natus veniam eos, tempora aut. Architecto impedit autem ea numquam, accusantium blanditiis. Molestiae deleniti ipsam dicta quisquam illum ipsa expedita, harum aliquam, nobis odio at, id minus! Quam similique numquam expedita eaque alias a, dolorem sapiente nam repellendus iusto accusamus maiores velit corporis voluptas quod quos est laborum dolores suscipit ducimus, omnis sequi tempora, totam. Maxime.</div>
 </div>

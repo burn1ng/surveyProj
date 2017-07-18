@@ -4,6 +4,7 @@
 
 //= ../../bower_components/jquery/dist/jquery.min.js
 //= ../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.js
+//= ../../bower_components/bootstrap-star-rating/js/star-rating.min.js
 
 
 /*
@@ -14,4 +15,5 @@
  * Custom
  */
 
+//= partials/file-select.jquery.js
 //= partials/app.js

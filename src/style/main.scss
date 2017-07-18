@@ -4,6 +4,9 @@
 
 // example of usage: @import "../../bower_components/normalize-css/normalize"; //don't need .css 
 
+@import "../../bower_components/bootstrap-star-rating/css/star-rating.min";
+@import "../../bower_components/bootstrap-star-rating/css/theme-krajee-svg.min";
+
 /*
  * Redefined Bootstrap's variables MUST BE BEFORE @import "bootstrap_custom".
 */
