@@ -109,3 +109,22 @@
         margin: 1em 0;
     }
 }
+
+.text-editor {
+    & .panel-heading, & .panel-body {
+        padding: 0;
+    }
+    & .ql-toolbar.ql-snow, .ql-container.ql-snow {
+        //override default styles
+        border: 0;
+    }
+    & .ql-editor.ql-blank::before {
+        //override default styles
+        font: 14px/1.1 'Roboto', sans-serif;
+    }
+    & .quill-editor-container {min-height: 8em;}
+}
+
+        
+        
+        

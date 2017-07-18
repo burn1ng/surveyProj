@@ -36,6 +36,11 @@
                 </div>
             </div>
             <div class="page-widget checkbox-question">
+                <a href="#" class="pull-right" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-edit">
+                        <use xlink:href="img/svg-sprite.svg#edit"></use>
+                    </svg>
+                </a>
                 <h4>1. Question with several variants of answer</h4>
                 <div class="input-group">
                     <div class="checkbox">
@@ -97,13 +102,66 @@
                     <span class="input-group-addon">
                     <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked aria-label="Radio input for input field 2">
                 </span>
-                    <input type="text" class="form-control" aria-label="Edit this radio field..." value="Answer 1">
+                    <input type="text" class="form-control" aria-label="Edit this radio field..." value="Answer 2">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">
                     <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" checked aria-label="Radio input for input field 3">
                 </span>
-                    <input type="text" class="form-control" aria-label="Edit this radio field..." value="Answer 1">
+                    <input type="text" class="form-control" aria-label="Edit this radio field..." value="Answer 3">
+                </div>
+            </div>
+            <div class="page-widget textarea-question">
+                <a href="#" class="pull-right" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-edit">
+                        <use xlink:href="img/svg-sprite.svg#edit"></use>
+                    </svg>
+                </a>
+                <h4>3. Question with text answer</h4>
+                <div class="panel panel-default text-editor">
+                    <div class="panel-heading">
+                        <div id="quill-toolbar">
+                            <span class="ql-formats">
+                                <select class="ql-font">
+                                    <option selected=""></option>
+                                    <option value="serif"></option>
+                                    <option value="monospace"></option>
+                                </select>
+                                <select class="ql-size">
+                                    <option value="small"></option>
+                                    <option selected=""></option>
+                                    <option value="large"></option>
+                                    <option value="huge"></option>
+                                </select>
+                            </span>
+                            <span class="ql-formats">
+                                <button class="ql-bold"></button>
+                                <button class="ql-italic"></button>
+                                <button class="ql-underline"></button>
+                                <button class="ql-strike"></button>
+                            </span>
+                            <span class="ql-formats">
+                                <select class="ql-color"></select>
+                                <select class="ql-background"></select>
+                            </span>
+                            <span class="ql-formats">
+                                <button class="ql-list" value="ordered"></button>
+                                <button class="ql-list" value="bullet"></button>
+                                
+                                <select class="ql-align">
+                                    <option selected=""></option>
+                                    <option value="center"></option>
+                                    <option value="right"></option>
+                                    <option value="justify"></option>
+                                </select>
+                            </span>
+                            <span class="ql-formats">
+                                <button class="ql-link"></button>
+                                <button class="ql-image"></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="panel-body quill-editor-container" id="quill-editor"></div>
                 </div>
             </div>
         </div>
