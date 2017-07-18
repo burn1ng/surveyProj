@@ -47,9 +47,7 @@
 }
 
 .page-constructor {
-    & .icon-page-control {
-        @include svg-size-align(1.5);
-    }
+
     & .widget-controls {
         margin-bottom: 5px;
     }
@@ -60,6 +58,11 @@
 
 .widget-controls {
     margin-bottom: 20px;
+    &.editable {
+        display: flex;
+        justify-content: flex-end;
+        align-self: center;
+    }
     & .icon-dropdown {
         & .dropdown-menu-left {
             left: 0;
@@ -88,13 +91,11 @@
     }
     &.editable {
         border: 1px dashed $brand-primary;
-        & .icon-wrapper {
-            justify-content: space-between;
-        }
         .drag-button {
-            cursor:pointer;
+            margin-right: auto;
+            cursor: move;
             &:hover .icon-draggy {
-                cursor:pointer;
+                cursor: move;
                 fill: $brand-primary;
             }
         }
@@ -111,10 +112,12 @@
 }
 
 .text-editor {
-    & .panel-heading, & .panel-body {
+    & .panel-heading,
+    & .panel-body {
         padding: 0;
     }
-    & .ql-toolbar.ql-snow, .ql-container.ql-snow {
+    & .ql-toolbar.ql-snow,
+    .ql-container.ql-snow {
         //override default styles
         border: 0;
     }
@@ -122,9 +125,7 @@
         //override default styles
         font: 14px/1.1 'Roboto', sans-serif;
     }
-    & .quill-editor-container {min-height: 8em;}
+    & .quill-editor-container {
+        min-height: 8em;
+    }
 }
-
-        
-        
-        

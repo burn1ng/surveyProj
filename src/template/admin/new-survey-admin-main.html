@@ -20,7 +20,7 @@
     <div role="tabpanel" class="tab-pane fade" id="survey-editor-page-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, earum.</div>
     <div role="tabpanel" class="tab-pane fade in active" id="survey-editor-page-2">
         <div class="page-widget page-constructor">
-            <div class="widget-controls">
+            <!-- <div class="widget-controls">
                 <div class="icon-wrapper">
                     <a href="#" role="button">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon-delete icon-page-control">
@@ -28,19 +28,28 @@
                         </svg>
                     </a>
                 </div>
-            </div>
+            </div> -->
             <div class="page-widget page-title">
+                <div class="widget-controls pull-right">
+                    <a href="#" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-delete">
+                            <use xlink:href="img/svg-sprite.svg#delete"></use>
+                        </svg>
+                    </a>
+                </div>
                 <div class="input-group">
                     <label class="sr-only" for="newSurveyName">Edit the name of page...</label>
                     <input type="text" class="form-control rounded-input" id="newSurveyName" placeholder="Edit the name of page" value="Page 2">
                 </div>
             </div>
             <div class="page-widget checkbox-question">
-                <a href="#" class="pull-right" role="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-edit">
-                        <use xlink:href="img/svg-sprite.svg#edit"></use>
-                    </svg>
-                </a>
+                <div class="widget-controls pull-right">
+                    <a href="#" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-edit">
+                            <use xlink:href="img/svg-sprite.svg#edit"></use>
+                        </svg>
+                    </a>
+                </div>
                 <h4>1. Question with several variants of answer</h4>
                 <div class="input-group">
                     <div class="checkbox">
@@ -61,35 +70,31 @@
                 </div>
             </div>
             <div class="page-widget radio-question editable">
-                <div class="widget-controls">
-                    <div class="icon-wrapper">
-                        <div class="drag-button" role="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-draggy">
-                                <use xlink:href="img/svg-sprite.svg#drag"></use>
-                            </svg>
-                            <span>Move</span>
-                        </div>
-                        <div class="icon-wrapper">
-                            <div class="checkbox-inline">
-                                <label class="no-select">
-                                    <input type="checkbox">Required
-                                </label>
-                            </div>
-                            <ul class="nav nav-pills icon-dropdown">
-                                <li role="presentation" class="dropdown">
-                                    <a id="delLabel2" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-delete icon-dropdown">
-                                            <use xlink:href="img/svg-sprite.svg#delete"></use>
-                                        </svg>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="delLabel2">
-                                        <li><a href="#">Delete only this widget</a></li>
-                                        <li><a href="#">Delete all widgets of that type</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="widget-controls editable">
+                    <div class="drag-button" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-draggy">
+                            <use xlink:href="img/svg-sprite.svg#drag"></use>
+                        </svg>
+                        <span class="no-select">Move</span>
                     </div>
+                    <div class="checkbox-inline">
+                        <label class="no-select">
+                            <input type="checkbox">Required
+                        </label>
+                    </div>
+                    <ul class="nav nav-pills icon-dropdown">
+                        <li role="presentation" class="dropdown">
+                            <a id="delLabel2" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-delete icon-dropdown">
+                                    <use xlink:href="img/svg-sprite.svg#delete"></use>
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="delLabel2">
+                                <li><a href="#">Delete only this widget</a></li>
+                                <li><a href="#">Delete all widgets of that type</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
                 <input type="text" class="form-control" placeholder="Edit your question..." value="2. Question with one variant of answer">
                 <div class="input-group">
@@ -112,11 +117,13 @@
                 </div>
             </div>
             <div class="page-widget textarea-question">
-                <a href="#" class="pull-right" role="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-edit">
-                        <use xlink:href="img/svg-sprite.svg#edit"></use>
-                    </svg>
-                </a>
+                <div class="widget-controls pull-right">
+                    <a href="#" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-edit">
+                            <use xlink:href="img/svg-sprite.svg#edit"></use>
+                        </svg>
+                    </a>
+                </div>
                 <h4>3. Question with text answer</h4>
                 <div class="panel panel-default text-editor">
                     <div class="panel-heading">
