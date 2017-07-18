@@ -149,3 +149,23 @@
         cursor: pointer;
     }
 }
+
+.range-question {
+    & .range-input-wrapper {
+        padding: 2em 0 1em;
+        display: flex;
+        justify-content: space-between;
+        & span:first-child {
+            margin-right: 1.5em;
+        }
+        & span:last-child {
+            margin-left: 1.5em;
+        }
+    }
+    & .slider.slider-horizontal {
+        width: 100%;
+    }
+    & .slider-handle {
+        cursor: pointer;
+    }
+}

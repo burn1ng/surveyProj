@@ -21,6 +21,12 @@ $(document).ready(function() {
 
     });
 
+
+    // input-rage slider init
+    $("#rageInputSlider1").slider({
+        tooltip: 'always'
+    });
+
     // $("#menu-toggle").click(function(e) {
     //     e.preventDefault();
     //     $(body).toggleClass("toggled");
