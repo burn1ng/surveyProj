@@ -1,0 +1,38 @@
+.survey-results {
+    &__heading {
+        margin: 1em 0;
+    }
+    & .panel-body {
+        padding: 5px 0;
+    }
+    & .survey-stats-cat {
+        margin: 1em 2em 1em 0;
+        .btn-light.active {
+            color: #fff;
+            background-color: $brand-primary;
+            border-color: $brand-primary;
+        }
+    }
+    & .summary {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.live-search-box {
+    margin: 1.5em 0;
+    & .btn-light:active,
+    .btn-light.active,
+    .open>.btn-light.dropdown-toggle {
+        background-color: #fff;
+        color: $brand-primary;
+    }
+    & .bootstrap-select .dropdown-toggle:focus {
+        outline: none!important;
+    }
+    & .bootstrap-select {
+        & .dropdown-menu>li>a {
+            white-space: pre-wrap;
+        }
+    }
+}

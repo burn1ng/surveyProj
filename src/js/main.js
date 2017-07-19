@@ -7,6 +7,7 @@
 
 //= ../../bower_components/bootstrap-star-rating/js/star-rating.min.js
 //= ../../bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js
+//= ../../bower_components/bootstrap-select/dist/js/bootstrap-select.min.js
 
 
 /*

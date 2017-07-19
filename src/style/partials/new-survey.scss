@@ -41,11 +41,11 @@
     & a[role="button"] {
         text-decoration: none; //fix a > svg text decoration
     }
-    & .nav>li>a:hover,
-    .nav>li>a:focus {
-        //override bootstrap
-        background-color: $body-bg;
-    }
+    // & .nav>li>a:hover,
+    // .nav>li>a:focus {
+    //     //override bootstrap
+    //     background-color: $body-bg;
+    // }
     & .checkbox input[type="checkbox"],
     .checkbox-inline input[type="checkbox"],
     .input-group-addon input[type="radio"],

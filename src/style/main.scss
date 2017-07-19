@@ -7,6 +7,7 @@
 @import "../../bower_components/bootstrap-star-rating/css/star-rating.min";
 @import "../../bower_components/bootstrap-star-rating/css/theme-krajee-svg.min"; //svg theme of rating stars
 @import "../../bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min"; //range slider
+@import "../../bower_components/bootstrap-select/dist/css/bootstrap-select.min";
 
 /*
  * Redefined Bootstrap's variables MUST BE BEFORE @import "bootstrap_custom".
@@ -54,4 +55,5 @@ sans-serif;
 @import "partials/templates";
 @import "partials/new-survey";
 @import "partials/survey";
+@import "partials/survey-results";
 @import "partials/copyright";

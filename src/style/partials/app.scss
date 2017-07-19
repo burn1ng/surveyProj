@@ -205,7 +205,7 @@ svg {
 .btn-light {
     @include button-variant($brand-primary,
     $body-bg,
-    $gray-lighter);
+    $btn-default-border);
     &:active,
     &:hover,
     &:active:hover {
