@@ -46,9 +46,13 @@
     z-index: 999999999;
 }
 
-.cta-btn {
+.cta-btn, .cta-btn:focus {
     background-color: $brand-primary;
     color: #fff;
+}
+.cta-btn:focus:hover {
+    background-color: #fff;
+    color: $brand-primary;
 }
 
 .input-heading {
@@ -95,6 +99,7 @@
 
 .icon-search {
     @include svg-size-align(1.3); //fix height collapse
+    fill: #fff;
 }
 
 

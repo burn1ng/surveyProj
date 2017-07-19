@@ -62,7 +62,8 @@ body {
 
 .main-wrapper {
     width: 100%;
-    position: absolute;
+    // position: absolute;
+    position: relative;
 }
 
 .page-wrapper:not(.toggled) {

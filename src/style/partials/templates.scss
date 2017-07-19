@@ -11,6 +11,7 @@
         }
         & svg {
             @include svg-size-align(1.4)
+            transition: none;
         }
     }
     &__wrapper {
