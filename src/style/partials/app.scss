@@ -65,6 +65,12 @@ body {
     position: absolute;
 }
 
+.page-wrapper:not(.toggled) {
+    & .sidebar-wrapper {
+        display: none;
+    }
+}
+
 @media(min-width: $screen-sm-min) {
     .page-wrapper {
         padding-left: 0;
@@ -140,11 +146,13 @@ label {
 
 
 
+
 /* Firefox 19+ */
 
 :-moz-placeholder {
     @include placeholder();
 }
+
 
 
 
@@ -182,6 +190,8 @@ label {
 svg {
     fill: currentColor;
     vertical-align: middle;
+    transition: all 0.2s;
+    color: initial;
 }
 
 .vcenter {
@@ -202,10 +212,10 @@ svg {
     }
     &:hover,
     &:focus {
-        background-color: initial;
-        color: initial;
+        background-color: initial; // color: initial;
     }
 }
+
 
 
 
@@ -240,26 +250,4 @@ This cannot be overridden without a Firefox-specific hack that we don't provide 
 // }
 // .icon-insta {
 //  @include sprite($icon-insta); 
-// }
-// good box shadows ob bottom of widget element
-// .shd:hover:after, .shd:hover:before {
-//     box-shadow: 0 15px 10px rgba(0,0,0,.7);
-// }
-// below.css:1
-// .shd:after {
-//     right: 7px;
-//     z-index: -3;
-//     -ms-transform: rotate(2deg);
-//     transform: rotate(2deg);
-// }
-// below.css:1
-// .shd:after, .shd:before {
-//     content: "";
-//     position: absolute;
-//     bottom: 15px;
-//     width: 50%;
-//     height: 20%;
-//     max-height: "100px";
-//     box-shadow: 0 15px 10px #fff;
-//     transition: box-shadow .2s;
 // }

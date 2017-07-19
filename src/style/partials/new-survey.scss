@@ -1,18 +1,18 @@
 .input-heading,
 .new-survey {
     & .input-group {
-        width: 100%;
+        width: 100%;        
     }
+}
+
+.input-group {
+    margin: 1em 0;
 }
 
 .action-controls {
     margin-bottom: 2em;
     & a {
         margin: 0.5em 0;
-        &:last-child {
-            background-color: $brand-primary;
-            color: #fff;
-        }
     }
     & a:not(:last-child) {
         margin-right: 1em;
@@ -24,16 +24,14 @@
     & .survey-stats {
         padding: 5px 10px;
     }
-    // & .right-sidebar {
-    //     margin-bottom: 20px;
-    // }
-    & a {
+    & a > svg {
         color: initial;
+        transition: all 0.2s;
     }
     & .nav>a,
     .nav>a:hover,
     .nav>a:focus {
-        position: absolute; //z-index: 3; // do not touch
+        position: absolute;
         top: -2.2em;
         left: -3em;
     }
@@ -121,11 +119,11 @@
     }
 }
 
-.radio-question {
-    .input-group {
-        margin: 1em 0;
-    }
-}
+// .radio-question {
+//     .input-group {
+//         margin: 1em 0;
+//     }
+// }
 
 .text-editor {
     & .panel-heading,
@@ -151,6 +149,14 @@
 .rating-question {
     & span.star {
         cursor: pointer;
+    }
+}
+.rating-container {
+    & .filled-stars {
+        color: $brand-primary;
+        //override defaults
+        -webkit-text-stroke: 1px transparent;
+        text-shadow: 1px 1px transparent;
     }
 }
 
@@ -182,6 +188,7 @@
         margin-bottom: 1em;
         & a {
             display: block;
+            color: initial;
             &:hover .icon-widget-type {
                 fill: $brand-primary;
             }
