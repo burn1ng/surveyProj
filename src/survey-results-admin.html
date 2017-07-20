@@ -114,7 +114,50 @@
             ]
         });
 
+        var chart2 = new CanvasJS.Chart("chartContainer2", {
+
+            // title: {
+            //     text: "Fortune Global 500 Companies by Country"
+
+            // },
+            theme: "theme2",
+            animationEnabled: true,
+            animationDuration: 2000,
+            axisX: {
+                interval: 1,
+                gridThickness: 0,
+                labelFontSize: 14,
+                labelFontStyle: "normal",
+                labelFontWeight: "normal",
+                labelFontFamily: "RobotoLight"
+
+            },
+            axisY2: {
+                labelFontSize: 12,
+                labelFontStyle: "normal",
+                labelFontWeight: "normal",
+                labelFontFamily: "RobotoLight"
+
+            },
+
+
+            data: [{
+                    type: "bar",
+                    name: "companies",
+                    axisYType: "secondary",
+                    color: "rgba(235, 28, 35, 1)",
+                    dataPoints: [
+                        { y: 23, label: "Answer 3" },
+                        { y: 32, label: "Answer 2" },
+                        { y: 45, label: "Answer 1" }
+                    ]
+                }
+
+            ]
+        });
+
         chart1.render();
+        chart2.render();
     }
     </script>
 </body>
