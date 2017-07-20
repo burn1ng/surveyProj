@@ -87,7 +87,7 @@ var browserSyncOptions = {
             "/bower_components": "./bower_components"
         }
     },
-    tunnel: false,
+    tunnel: true,
     host: 'localhost',
     port: 3002,
 

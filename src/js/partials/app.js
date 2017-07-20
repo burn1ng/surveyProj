@@ -29,17 +29,24 @@ $(document).ready(function() {
 
 
     // listeners for prev and next buttons
-    $('.prev-page').click(function(){
+    $('.prev-page').click(function() {
         $('.nav-pills > .active').prev('li').find('a').trigger('click');
     });
 
-    $('.next-page').click(function(){
+    $('.next-page').click(function() {
         $('.nav-pills > .active').next('li').find('a').trigger('click');
     });
 
+    // listeners for radio inputs
+    $('#summaryInfoView').parent().on("click", function() {
+        location.href = "survey-results-admin.html";
+    });
+    $('#byUserInfoView').parent().on("click", function() {
+        location.href = "survey-results-by-user-admin.html";
+    });
 
     // change the caret direction
-    $('.sortable').click(function(){
+    $('.sortable').click(function() {
         $(this).toggleClass('dropup');
     });
 

@@ -1,4 +1,4 @@
-.survey-results {
+    .survey-results {
     &__heading {
         margin: 1em 0;
     }
@@ -104,4 +104,54 @@
     a:visited {
         border-bottom: 0;
     }
+    .dropdown,
+    .icon-wrapper {
+        a:hover,
+        a:focus,
+        a:active,
+        a:focus:hover,
+        a:visited:hover {
+            border-bottom: 0;
+        }
+    }
+    .navigation-link {
+        &:hover,
+        &:focus,
+        &:active,
+        &:focus:hover,
+        &:visited:hover {
+            border-bottom: 0;
+        }
+    }
+}
+
+.profile-avatar {
+    @include svg-size-align(5);
+    margin-right: 1em;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+.answer-document {
+	@include svg-size-align(3);
+	margin-right: 1em;
+}
+
+.user-answer {
+	margin: 2em 0 1em;
+	font-size: 0.9em;
+	& blockquote {
+		font-size: inherit; //don't touch
+	}
+}
+
+.same-hover:hover {
+	cursor: pointer;
+	& svg {
+		fill: $brand-primary;
+	}
+	a {
+		text-decoration: underline;
+	}
 }

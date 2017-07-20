@@ -93,7 +93,7 @@
 //TODO save to app all behavior of svg controls
 .icon-edit,
 .icon-delete,
-.icon-arrow {
+.icon-arrow, {
     @include svg-size-align(1.3);
     &:hover {
         fill: $brand-primary;
