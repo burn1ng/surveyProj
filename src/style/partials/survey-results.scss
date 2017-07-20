@@ -17,6 +17,9 @@
         display: inline-block;
         vertical-align: middle;
     }
+    .table {
+        margin-top: 20px;
+    }
 }
 
 .live-search-box {
@@ -28,7 +31,7 @@
         color: $brand-primary;
     }
     & .bootstrap-select .dropdown-toggle:focus {
-        outline: none!important;
+        outline: none!important; // fuck off bootstrap-select's important! :)
     }
     & .bootstrap-select {
         & .dropdown-menu>li>a {
@@ -48,11 +51,40 @@
 }
 
 .widget-results {
-	padding: 1em 0;
+    padding: 1em 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     &__item:not(:last-child) {
-		margin-bottom: 0.5em;
+        margin-bottom: 0.5em;
+    }
+}
+
+.sortable {
+    position: relative;
+    cursor: pointer;
+    @extend .no-select;
+    &.dropup>.caret {
+        border-bottom-color: $brand-primary;
+    }
+    & .caret {
+        position: absolute;
+        top: 50%;
+        right: 1em;
+        transform: translateY(-50%);
+        border-top-color: $brand-primary;
+    }
+}
+
+.table-rounded {
+    border: 1px solid $table-border-color;
+    border-collapse: separate;
+    border-radius: 8px;
+    &>thead>tr>th {
+        border-bottom: 0;
+    }
+    & tr>td:not(:last-child),
+    & th:not(:last-child) {
+        border-right: 1px solid $table-border-color;
     }
 }

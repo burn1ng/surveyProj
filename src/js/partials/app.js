@@ -37,6 +37,15 @@ $(document).ready(function() {
         $('.nav-pills > .active').next('li').find('a').trigger('click');
     });
 
+
+    // change the caret direction
+    $('.sortable').click(function(){
+        $(this).toggleClass('dropup');
+    });
+
+    // $('.next-page').click(function(){
+    //     $('.nav-pills > .active').next('li').find('a').trigger('click');
+    // });
     // $("#menu-toggle").click(function(e) {
     //     e.preventDefault();
     //     $(body).toggleClass("toggled");
