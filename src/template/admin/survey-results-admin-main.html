@@ -40,169 +40,258 @@
         <li role="presentation" class="active"><a href="#survey-results-page-2" aria-controls="survey-results-page-2" role="tab" data-toggle="tab">Page 2</a></li>
         <li role="presentation"><a href="#survey-results-page-3" aria-controls="survey-results-page-3" role="tab" data-toggle="tab">Page 3</a></li>
     </ul>
-        <!-- Tab panes -->
+    <!-- Tab panes -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade" id="survey-results-page-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, earum.</div>
         <div role="tabpanel" class="tab-pane fade in active" id="survey-results-page-2">
-           <!--  <div class="survey-page"> -->
-                <div class="page-widget page-title">
-                    <h4>Page 2</h4>
+            <!--  <div class="survey-page"> -->
+            <div class="page-widget page-title">
+                <h4>Page 2</h4>
+            </div>
+            <div class="page-widget checkbox-question">
+                <h4>1. Question with several variants of answer</h4>
+                <span class="help-block">
+                    	Answers amount: <span class="answers-amount">100</span>, Skipped answers amount: <span class="answers-skipped">10</span>
+                </span>
+                <div id="chartContainer1" class="chart-bar-container"></div>
+                <div class="widget-results">
+                    <span class="widget-results__item">
+                    		<span class="answer">
+                    			Answer 1:
+                    			<span class="answer__stats">78%</span> (
+                    <span class="answer__stats__amount">80</span> answers)
+                    </span>
+                    </span>
+                    <span class="widget-results__item">
+                    		<span class="answer">
+                    			Answer 2:
+                    			<span class="answer__stats">55%</span> (
+                    <span class="answer__stats__amount">61</span> answers)
+                    </span>
+                    </span>
+                    <span class="widget-results__item">
+                    		<span class="answer">
+                    			Answer 3:
+                    			<span class="answer__stats">92%</span> (
+                    <span class="answer__stats__amount">100</span> answers)
+                    </span>
+                    </span>
                 </div>
-                <div class="page-widget checkbox-question">
-                    <h4>1. Question with several variants of answer</h4>
-                    <span class="help-block">
+            </div>
+            <div class="page-widget radio-question">
+                <h4>2. Question with one answer option</h4>
+                <span class="help-block">
+                    	Answers amount: <span class="answers-amount">110</span>, Skipped answers amount: <span class="answers-skipped">0</span>
+                </span>
+                <div id="chartContainer2" class="chart-bar-container"></div>
+                <div class="widget-results">
+                    <span class="widget-results__item">
+                    		<span class="answer">
+                    			Answer 1:
+                    			<span class="answer__stats">45%</span> (
+                    <span class="answer__stats__amount">50</span> answers)
+                    </span>
+                    </span>
+                    <span class="widget-results__item">
+                    		<span class="answer">
+                    			Answer 2:
+                    			<span class="answer__stats">32%</span> (
+                    <span class="answer__stats__amount">38</span> answers)
+                    </span>
+                    </span>
+                    <span class="widget-results__item">
+                    		<span class="answer">
+                    			Answer 3:
+                    			<span class="answer__stats">23%</span> (
+                    <span class="answer__stats__amount">22</span> answers)
+                    </span>
+                    </span>
+                </div>
+            </div>
+            <div class="page-widget textarea-question">
+                <h4>3. Question with text answer</h4>
+                <span class="help-block">
+                    	Answers amount: <span class="answers-amount">100</span>, Skipped answers amount: <span class="answers-skipped">0</span>
+                </span>
+                <table class="table table-rounded table-striped table-responsive table-hover">
+                    <thead>
+                        <tr>
+                            <th class="sortable">Answers<span class="caret pull-right"></span></th>
+                            <th class="sortable">Respondents<span class="caret pull-right"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Answer 1</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>            
+						</tr>
+						<tr>
+							<td>Text answer #2</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+						<tr>
+							<td>Blah Blah Blah</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+						<tr>
+							<td>Answer 4</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+						<tr>
+							<td>Answer 5</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+						<tr>
+							<td>Answer 6</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td>
+								<span class="sum">Amount: <span>112</span></span>
+                                </td>
+                                <td>
+                                    <a href="#" role="button">Show all answers stats</a>
+                                </td>
+                        </tr>
+                        </tfoot>
+                </table>
+            </div>
+            <div class="page-widget file-question">
+                <h4>4. File - question</h4>
+                <span class="help-block">
+                    	Answers amount: <span class="answers-amount">100</span>, Skipped answers amount: <span class="answers-skipped">10</span>
+                </span>
+                <table class="table table-rounded table-striped table-responsive table-hover">
+                    <thead>
+                        <tr>
+                            <th class="sortable">Answers<span class="caret pull-right"></span></th>
+                            <th class="sortable">Respondents<span class="caret pull-right"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<a href="#" class="file-link">report.pdf</a>
+							</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>            
+						</tr>
+						<tr>
+							<td>
+								<a href="#" class="file-link">документ1.docx</a>
+							</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="#" class="file-link">image1.jpg</a>
+							</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="#" class="file-link">image2.jpg</a>
+							</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="#" class="file-link">image3.jpg</a>
+							</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="#" class="file-link">image100.jpg</a>
+							</td>
+							<td>
+								<a href="#" role="button">Show the answers of respondent</a>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td>
+								<span class="sum">Amount: <span>112</span></span>
+                                </td>
+                                <td>
+                                    <a href="#" role="button">Show all answers stats</a>
+                                </td>
+                        </tr>
+                        </tfoot>
+                </table>
+            </div>
+            <div class="page-widget rating-question">
+                <h4>5. Question - rating</h4>
+                <span class="help-block">
                     	Answers amount: <span class="answers-amount">100</span>, 
                     	Skipped answers amount: <span class="answers-skipped">10</span>
+                </span>
+                <div id="chartContainer3" class="chart-bar-container"></div>
+                <div class="widget-results">
+                    <span class="widget-results__item">
+                    	<span class="answer">5:
+                    		<span class="answer__stats">70%</span> 
+                    		(<span class="answer__stats__amount">70</span> answers)
+                    	</span>
                     </span>
-                    <div id="chartContainer1" class="chart-bar-container"></div>
-                    <div class="widget-results">
-                    	<span class="widget-results__item">
-                    		<span class="answer">
-                    			Answer 1:
-                    			<span class="answer__stats">78%</span>
-                    			(<span class="answer__stats__amount">80</span> answers)
-                    		</span>
-                    	</span>
-                    	<span class="widget-results__item">
-                    		<span class="answer">
-                    			Answer 2:
-                    			<span class="answer__stats">55%</span>
-                    			(<span class="answer__stats__amount">61</span> answers)
-                    		</span>
-                    	</span>
-                    	<span class="widget-results__item">
-                    		<span class="answer">
-                    			Answer 3:
-                    			<span class="answer__stats">92%</span>
-                    			(<span class="answer__stats__amount">100</span> answers)
-                    		</span>
-                    	</span>
-                    </div>
-                </div>
-                <div class="page-widget radio-question">
-                    <h4>2. Question with one answer option</h4>
-                    <span class="help-block">
-                    	Answers amount: <span class="answers-amount">110</span>, 
-                    	Skipped answers amount: <span class="answers-skipped">0</span>
+                    <span class="widget-results__item">
+                    	<span class="answer">4:
+                    		<span class="answer__stats">20%</span> 
+                    		(<span class="answer__stats__amount">20</span> answers)
                     </span>
-                    <div id="chartContainer2" class="chart-bar-container"></div>
-                    <div class="widget-results">
-                    	<span class="widget-results__item">
-                    		<span class="answer">
-                    			Answer 1:
-                    			<span class="answer__stats">45%</span>
-                    			(<span class="answer__stats__amount">50</span> answers)
-                    		</span>
+                    </span>
+                    <span class="widget-results__item">
+                    	<span class="answer">3:
+                    		<span class="answer__stats">5%</span> 
+                    		(<span class="answer__stats__amount">5</span> answers)
+                    </span>
+                    </span>
+                    <span class="widget-results__item">
+                    	<span class="answer">3:
+                    		<span class="answer__stats">3%</span> 
+                    		(<span class="answer__stats__amount">3</span> answers)
+                    </span>
+                    </span>
+                    <span class="widget-results__item">
+                    	<span class="answer">1:
+                    		<span class="answer__stats">2%</span> 
+                    		(<span class="answer__stats__amount">2</span> answers)
                     	</span>
-                    	<span class="widget-results__item">
-                    		<span class="answer">
-                    			Answer 2:
-                    			<span class="answer__stats">32%</span>
-                    			(<span class="answer__stats__amount">38</span> answers)
-                    		</span>
-                    	</span>
-                    	<span class="widget-results__item">
-                    		<span class="answer">
-                    			Answer 3:
-                    			<span class="answer__stats">23%</span>
-                    			(<span class="answer__stats__amount">22</span> answers)
-                    		</span>
-                    	</span>
-                    </div>
+                    </span>
                 </div>
-                <div class="page-widget textarea-question">
-                    <h4>3. Question with text answer</h4>
-                    
-
-
-<table class="table table-rounded table-striped table-responsive table-hover">
-    <thead>
-        <tr>
-            <th class="sortable">Answers<span class="caret pull-right"></span></th>
-            <th class="sortable">Respondents<span class="caret pull-right"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Answer 1</td>
-            <td>
-            	<a href="#" role="button">Show the answers of respondent</a>
-            </td>            
-        </tr>
-        <tr>
-            <td>Text answer #2</td>
-            <td>
-            	<a href="#" role="button">Show the answers of respondent</a>
-            </td>
-        </tr>
-        <tr>
-            <td>Blah Blah Blah</td>
-            <td>
-            	<a href="#" role="button">Show the answers of respondent</a>
-            </td>
-        </tr>
-        <tr>
-            <td>Answer 4</td>
-            <td>
-            	<a href="#" role="button">Show the answers of respondent</a>
-            </td>
-        </tr>
-        <tr>
-            <td>Answer 5</td>
-            <td>
-            	<a href="#" role="button">Show the answers of respondent</a>
-            </td>
-        </tr>
-        <tr>
-            <td>Answer 6</td>
-            <td>
-            	<a href="#" role="button">Show the answers of respondent</a>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td>
-                <span class="sum">Amount: <span>112</span></span>
-            </td>
-            <td>
-                <a href="#" role="button">Show all answers stats</a>
-            </td>
-        </tr>
-    </tfoot>
-</table>
-
+            </div>
+<!--             <div class="page-widget range-question">
+                <h4>6. Question - range</h4>
+                <div class="input-group range-input-wrapper">
+                    <span class="min-range-value">0</span>
+                    <input id="rageInputSlider1" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0" />
+                    <span class="max-range-value">100</span>
                 </div>
-                <div class="page-widget file-question">
-                    <h4>4. File - question</h4>
-                    <div class="input-group">
-                        <label class="input-group-btn">
-                            <span class="btn btn-primary">Browse&hellip; 
-                            <input type="file" multiple>
-                        </span>
-                        </label>
-                        <input type="text" class="form-control" disabled>
-                    </div>
-                    <span class="help-block">Select one or more files from your device</span>
-                </div>
-                <div class="page-widget rating-question">
-                    <h4>5. Question - rating</h4>
-                    <div class="input-group">
-                        <input id="questionRating1" name="input-name" type="number" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="xs" data-show-caption="false">
-                    </div>
-                </div>
-                <div class="page-widget range-question">
-                    <h4>6. Question - range</h4>
-                    <div class="input-group range-input-wrapper">
-                        <span class="min-range-value">0</span>
-                        <input id="rageInputSlider1" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0" />
-                        <span class="max-range-value">100</span>
-                    </div>
-                </div>
+            </div> -->
             <!-- </div> -->
         </div>
         <div role="tabpanel" class="tab-pane fade" id="survey-results-page-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem culpa ut odio voluptatum fuga vero id quae sint reiciendis dolor, minus saepe, fugit omnis laborum provident facere veritatis placeat maiores quibusdam. In earum expedita facere, deserunt, ut rem quo possimus odio. Dolorem perferendis, est natus veniam eos, tempora aut. Architecto impedit autem ea numquam, accusantium blanditiis. Molestiae deleniti ipsam dicta quisquam illum ipsa expedita, harum aliquam, nobis odio at, id minus! Quam similique numquam expedita eaque alias a, dolorem sapiente nam repellendus iusto accusamus maiores velit corporis voluptas quod quos est laborum dolores suscipit ducimus, omnis sequi tempora, totam. Maxime.</div>

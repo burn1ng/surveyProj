@@ -23,7 +23,6 @@
 }
 
 .live-search-box {
-
     & .btn-light:active,
     .btn-light.active,
     .open>.btn-light.dropdown-toggle {
@@ -54,9 +53,11 @@
     padding: 1em 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    &__item:not(:last-child) {
-        margin-bottom: 0.5em;
+    &__item {
+        flex: 0 1 250px; //don't touch!
+        &:not(:last-child) {
+            margin-bottom: 0.5em;
+        }
     }
 }
 
@@ -86,5 +87,21 @@
     & tr>td:not(:last-child),
     & th:not(:last-child) {
         border-right: 1px solid $table-border-color;
+    }
+}
+
+.table {
+    a:hover,
+    a:focus,
+    a:active,
+    a:focus:hover,
+    a:visited:hover {
+        color: $brand-primary;
+        text-decoration: none;
+        border-bottom: 1px dashed $gray-light;
+    }
+    & a:focus,
+    a:visited {
+        border-bottom: 0;
     }
 }

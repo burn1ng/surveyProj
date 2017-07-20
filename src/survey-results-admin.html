@@ -30,8 +30,12 @@
     
     <script>
      window.onload = function() {
+      CanvasJS.addColorSet("brand-3-color", ["#f37a7e", "#ef4b50", "#EB1C21"]);
+      CanvasJS.addColorSet("brand-5-color", ["#fcd7d9", "#f7a9ab", "#f7a9ab", "#f16267", "#eb1c23"]);
+
         var chart1 = new CanvasJS.Chart("chartContainer1", {
-            theme: "theme2",
+            // theme: "theme1",
+            colorSet: "brand-3-color",
             animationEnabled: true,
             animationDuration: 2000,
             axisX: {
@@ -52,9 +56,9 @@
             },
             data: [{
                     type: "bar",
-                    name: "companies",
+                    name: "severalVariants",
                     axisYType: "secondary",
-                    color: "rgba(235, 28, 35, 1)",
+                    //color: "rgba(235, 28, 35, 1)",
                     dataPoints: [
                         { y: 92, label: "Answer 3" },
                         { y: 55, label: "Answer 2" },
@@ -65,7 +69,8 @@
         });
 
         var chart2 = new CanvasJS.Chart("chartContainer2", {
-            theme: "theme2",
+            // theme: "theme2",
+            colorSet: "brand-3-color",
             animationEnabled: true,
             animationDuration: 2000,
             axisX: {
@@ -85,9 +90,9 @@
             },
             data: [{
                     type: "bar",
-                    name: "companies",
+                    name: "oneVariant",
                     axisYType: "secondary",
-                    color: "rgba(235, 28, 35, 1)",
+                    //color: "rgba(235, 28, 35, 1)",
                     dataPoints: [
                         { y: 23, label: "Answer 3" },
                         { y: 32, label: "Answer 2" },
@@ -97,8 +102,46 @@
 
             ]
         });
+        var chart3 = new CanvasJS.Chart("chartContainer3", {
+            //theme: "theme2",
+            colorSet: "brand-5-color",
+            animationEnabled: true,
+            animationDuration: 2000,
+            axisX: {
+                interval: 1,
+                gridThickness: 0,
+                labelFontSize: 14,
+                labelFontStyle: "normal",
+                labelFontWeight: "normal",
+                labelFontFamily: "RobotoLight"
+            },
+            axisY2: {
+                labelFontSize: 12,
+                labelFontStyle: "normal",
+                labelFontWeight: "normal",
+                labelFontFamily: "RobotoLight"
+
+            },
+            data: [{
+                    type: "bar",
+                    bevelEnabled: false,
+                    name: "ratingAnswer",
+                    axisYType: "secondary",
+                    //color: "rgba(235, 28, 35, 1)",
+                    dataPoints: [
+                        { y: 2, label: "1 ★" },
+                        { y: 3, label: "2 ★" },
+                        { y: 5, label: "3 ★" },
+                        { y: 20, label: "4 ★" },
+                        { y: 70, label: "5 ★" }
+                    ]
+                }
+
+            ]
+        });
         chart1.render();
         chart2.render();
+        chart3.render();
     }
     </script>
 </body>
