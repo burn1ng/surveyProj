@@ -2,38 +2,121 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8"> 
+    <meta charset="UTF-8"> 
 
-  //= template/head_meta.html
+    //= template/head_meta.html
 
-  <title>Survey Results | SurveyMonkey Admin Panel</title>
+    <title>Survey Results | SurveyMonkey Admin Panel</title>
 
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://cdn.quilljs.com/1.3.0/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
-
-  //= template/admin/header-admin.html
-
-  <div class="page-wrapper toggled">
-
-    <div class="container sidebar-wrapper">
-      //= template/admin/sidebar-admin.html
-    </div>
-
-    <div class="container main-wrapper">
-      <div class="row">
-        <div class="col-xs-16 col-xs-offset-1">
-          //= template/admin/survey-results-admin-main.html
+    //= template/admin/header-admin.html
+    <div class="page-wrapper toggled">
+        <div class="container sidebar-wrapper">
+            //= template/admin/sidebar-admin.html
         </div>
-      </div>
+        <div class="container main-wrapper">
+            <div class="row">
+                <div class="col-xs-16 col-xs-offset-1">
+                    //= template/admin/survey-results-admin-main.html
+                </div>
+            </div>
+        </div>
     </div>
+    //= template/copyright.html
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.0/quill.js"></script>
+    <script>
+    var Delta = Quill.import('delta');
+    var quill = new Quill('#quill-editor', {
+        modules: {
+            toolbar: '#quill-toolbar'
+        },
+        placeholder: 'Type your answer here...',
+        theme: 'snow'
+    });
 
-  </div>
+    // Store accumulated changes
+    var change = new Delta();
+    quill.on('text-change', function(delta) {
+        change = change.compose(delta);
+    });
 
-  //= template/copyright.html
+    // Save periodically
+    setInterval(function() {
+        if (change.length() > 0) {
+            console.log('Saving changes', change);
+            /* 
+            Send partial changes
+            $.post('/your-endpoint', { 
+              partial: JSON.stringify(change) 
+            });
+    
+            Send entire document
+            $.post('/your-endpoint', { 
+              doc: JSON.stringify(quill.getContents())
+            });
+            */
+            change = new Delta();
+        }
+    }, 5 * 1000);
 
-  <script type="text/javascript" src="js/main.js"></script>
+    // Check for unsaved data
+    window.onbeforeunload = function() {
+        if (change.length() > 0) {
+            console.log('There are unsaved changes. Are you sure you want to leave?');
+        }
+    }
+
+     window.onload = function() {
+        var chart1 = new CanvasJS.Chart("chartContainer1", {
+
+            // title: {
+            //     text: "Fortune Global 500 Companies by Country"
+
+            // },
+            theme: "theme2",
+            animationEnabled: true,
+            animationDuration: 2000,
+            axisX: {
+                interval: 1,
+                gridThickness: 0,
+                labelFontSize: 14,
+                labelFontStyle: "normal",
+                labelFontWeight: "normal",
+                labelFontFamily: "RobotoLight"
+
+            },
+            axisY2: {
+                labelFontSize: 12,
+                labelFontStyle: "normal",
+                labelFontWeight: "normal",
+                labelFontFamily: "RobotoLight"
+
+            },
+
+
+            data: [{
+                    type: "bar",
+                    name: "companies",
+                    axisYType: "secondary",
+                    color: "rgba(235, 28, 35, 1)",
+                    dataPoints: [
+                        { y: 92, label: "Answer 3" },
+                        { y: 55, label: "Answer 2" },
+                        { y: 78, label: "Answer 1" }
+                    ]
+                }
+
+            ]
+        });
+
+        chart1.render();
+    }
+    </script>
 </body>
 
 </html>

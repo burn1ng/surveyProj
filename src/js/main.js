@@ -8,11 +8,11 @@
 //= ../../bower_components/bootstrap-star-rating/js/star-rating.min.js
 //= ../../bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js
 //= ../../bower_components/bootstrap-select/dist/js/bootstrap-select.min.js
-
+//= ../../bower_components/chart/canvasjs.min.js
 
 /*
  * TODO Set relative path to required js modules of bootstrap, don't use all of them!
-*/
+ */
 
 /*
  * Custom

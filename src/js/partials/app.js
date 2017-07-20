@@ -27,6 +27,16 @@ $(document).ready(function() {
         tooltip: 'always'
     });
 
+
+    // listeners for prev and next buttons
+    $('.prev-page').click(function(){
+        $('.nav-pills > .active').prev('li').find('a').trigger('click');
+    });
+
+    $('.next-page').click(function(){
+        $('.nav-pills > .active').next('li').find('a').trigger('click');
+    });
+
     // $("#menu-toggle").click(function(e) {
     //     e.preventDefault();
     //     $(body).toggleClass("toggled");

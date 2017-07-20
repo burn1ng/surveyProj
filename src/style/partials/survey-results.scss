@@ -6,7 +6,7 @@
         padding: 5px 0;
     }
     & .survey-stats-cat {
-        margin: 1em 2em 1em 0;
+        margin: 2em 2em 2em 0;
         .btn-light.active {
             color: #fff;
             background-color: $brand-primary;
@@ -19,8 +19,13 @@
     }
 }
 
+.canvasjs-chart-credit {
+	//hide canvasjs chart license
+   display: none;
+}
+
 .live-search-box {
-    margin: 1.5em 0;
+    
     & .btn-light:active,
     .btn-light.active,
     .open>.btn-light.dropdown-toggle {

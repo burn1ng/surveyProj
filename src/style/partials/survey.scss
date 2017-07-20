@@ -1,7 +1,5 @@
-.survey {
-	& .nav-pills {
-		margin: 2em 0 1em;
-	}
+.survey,
+.survey-results {
     & .page-widget {
         border-width: 0 0 1px 0;
         border-radius: 0;
@@ -9,6 +7,9 @@
             border: 0;
             margin-bottom: 0;
         }
+    }
+    & .nav-pills {
+        margin: 2em 0 1em;
     }
     & .tab-content {
         padding: 1em;
@@ -24,7 +25,6 @@
         margin-bottom: 0;
     }
 }
-
 
 .progress-widget {
     margin: 1em 0 3em;
