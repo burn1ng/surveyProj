@@ -46,10 +46,19 @@
     z-index: 999999999;
 }
 
-.cta-btn, .cta-btn:focus {
+.navbar-right {
+    & .dropdown-menu {
+        right: 0;
+        left: auto;
+    }
+}
+
+.cta-btn,
+.cta-btn:focus {
     background-color: $brand-primary;
     color: #fff;
 }
+
 .cta-btn:focus:hover {
     background-color: #fff;
     color: $brand-primary;
