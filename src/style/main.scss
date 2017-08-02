@@ -1,18 +1,14 @@
 /*
 * Third Party
 */
-
 // example of usage: @import "../../bower_components/normalize-css/normalize"; //don't need .css 
-
 @import "../../bower_components/bootstrap-star-rating/css/star-rating.min";
 @import "../../bower_components/bootstrap-star-rating/css/theme-krajee-svg.min"; //svg theme of rating stars
 @import "../../bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min"; //range slider
 @import "../../bower_components/bootstrap-select/dist/css/bootstrap-select.min";
-
 /*
  * Redefined Bootstrap's variables MUST BE BEFORE @import "bootstrap_custom".
 */
-
 $icon-font-path: "/bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 $brand-primary: #eb1c23;
 $link-color: $brand-primary;
@@ -23,21 +19,10 @@ $navbar-default-toggle-hover-icon-bar-bg: #fff;
 $grid-columns: 18 !default; //** Number of columns in the grid.
 $grid-gutter-width: 20px !default; //** Padding between columns. Gets divided in half for the left and right.
 @import "_bootstrap_custom";
-
-
-
-/*
-* png sprite
-*/
-
-@import "partials/_sprite"; // generated scss from png.sprite 
-
 /*
 * Custom .scss
 */
-
 @import 'partials/mixins';
-//Fonts variables
 $medium: 'RobotoMedium',
 sans-serif;
 $light: 'RobotoLight',
