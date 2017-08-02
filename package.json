@@ -4,7 +4,10 @@
   "description": "my first real project in iTechArt",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -47,5 +50,9 @@
     "merge": "^1.2.0",
     "run-sequence": "^2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+  	"react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10"
+  }
 }
