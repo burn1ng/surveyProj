@@ -125,9 +125,6 @@ gulp.task('build', function (cb) {
         ['image:build', 'style:build', 'fonts:copy', 'favicon:copy', 'index:copy'], // simultaneously
         cb)
 })
-gulp.task('finish', function () {
-  gutil.log(gutil.colors.green('Building complete'))
-})
 
 // ============ WATCHING  ============
 
@@ -155,5 +152,9 @@ gulp.task('watch', function () {
 // ============ bash: gulp  ============
 
 gulp.task('default', function (cb) {
-  runSequence(['build', 'watch'], 'finish', cb)
+  runSequence('build', 'watch', cb)
 })
+
+gulp.doneCallback = function () {
+  gutil.log(gutil.colors.green('Building complete'))
+}
